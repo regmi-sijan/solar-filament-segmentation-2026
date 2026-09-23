@@ -2,6 +2,16 @@
 
 A reproducible native-resolution, CPU-based instance-segmentation baseline by Sijan Regmi. It uses Gaussian local contrast, solar-disk masking, morphological closing, and connected components. It does not require pretrained weights or external data.
 
+## Submission status
+
+Kaggle accepted `results/submission.csv` on September 23, 2026 and displayed public score **0.15**. It is selected for final scoring. Local held-out PQ is a separate measurement. See `docs/submission-status.json` for the external submission record.
+
+Public source: https://github.com/regmi-sijan/solar-filament-segmentation-2026
+
+Public Kaggle notebook: https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible. Version 1 ran successfully on free CPU and reproduced the accepted CSV byte-for-byte (SHA-256 `65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab`). The organizers’ final form was submitted and confirmed on September 23, 2026.
+
+`notebooks/kaggle-inference.ipynb` is a self-contained inference notebook for Kaggle with the competition data attached; the full calibration and evaluation notebook is `notebooks/competition-pipeline.ipynb`.
+
 ## Setup
 
 Tested with Python 3.14 on ARM64 macOS with 16 GiB RAM. Install the exact packages in a dedicated environment:
@@ -69,7 +79,7 @@ Frozen-configuration validation: **PQ 0.1796**, with a date-cluster bootstrap 95
 
 See `results/validation.json` for measured PQ and uncertainty, `results/calibration.json` for all search trials, and `results/submission-verification.json` for the CSV checksum. Local validation is not a Kaggle leaderboard result. No leaderboard score should be inferred from it.
 
-See `docs/method-walkthrough.md` for an explanation of the method and its weaknesses, and `docs/requirements-checklist.md` for remaining external submission steps. AI assistance was used for implementation and documentation. The participant remains responsible for understanding and defending the method.
+See `docs/method-walkthrough.md` for an explanation of the method and its weaknesses, and `docs/requirements-checklist.md` for competition requirements. AI assistance was used for implementation and documentation. The participant remains responsible for understanding and defending the method.
 
 ## Competition references
 
@@ -77,4 +87,4 @@ See `docs/method-walkthrough.md` for an explanation of the method and its weakne
 - https://www.kaggle.com/code/azimahmadzadeh/self-evaluation-notebook
 - https://doi.org/10.1038/s41597-024-03876-y
 
-Public repository publication and the organizers' final form are separate actions. Files prepared locally do not establish a completed competition submission.
+The required submission and public code-sharing steps are complete; final judging remains with the organizers.

@@ -11,8 +11,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 4637,
-    "sha256": "3a0e8a235fe687a4994773c2f3a337c8a987813c9a037f6ee227cca2922fa92d"
+    "bytes": 5489,
+    "sha256": "bd779928fab79d4bb61ea5e655bf21de50edfd0c6a66a74e1407f40aa904cb99"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
@@ -56,8 +56,13 @@
   },
   {
     "path": "docs/requirements-checklist.md",
-    "bytes": 2295,
-    "sha256": "62cf654d823af9ba7f8a97f46369a3d31c59d43e6bc110050398d08c8217a6da"
+    "bytes": 2713,
+    "sha256": "d232e02f1956a12bc011a196ef1c0f9b5303776a617de3f1f818c13e78439e52"
+  },
+  {
+    "path": "docs/submission-status.json",
+    "bytes": 1050,
+    "sha256": "1637e5f8ac270b80fdf08e174929d30bb07c7b4bc6efdebf9cd83e3e264da5af"
   },
   {
     "path": "filament/__init__.py",
@@ -78,6 +83,11 @@
     "path": "notebooks/competition-pipeline.ipynb",
     "bytes": 498833,
     "sha256": "bf1fa174d2dc770cc2c34c4be701834736260f0df777f5126f65b50afe6acf9d"
+  },
+  {
+    "path": "notebooks/kaggle-inference.ipynb",
+    "bytes": 8518,
+    "sha256": "3d257a8f38c03d9a77bf1ca410a5668af6ea380fb1fade1c786c454b8fd9c227"
   },
   {
     "path": "report/figures/examples.pdf",
@@ -191,8 +201,8 @@
   },
   {
     "path": "scripts/package_release.py",
-    "bytes": 1860,
-    "sha256": "aaeaf54afc5612d4b37548ccfb1739eef7822df44408529d701b63df8249cb1d"
+    "bytes": 1910,
+    "sha256": "ba6e0553b17cc00f099f800653784e6849b5a95f82eb8e73b6a383a80ca8d78b"
   },
   {
     "path": "tests/test_pipeline.py",
