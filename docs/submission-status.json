@@ -10,9 +10,20 @@
     "sha256": "65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab"
   },
   "kaggle_notebook": "https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible",
-  "notebook_publication": "in_progress",
+  "notebook_publication": "public",
   "organizers_form": {
-    "status": "prepared_awaiting_captcha",
-    "report_sha256": "ef89e3dde9cfb5637c3d701fd391a44411d0ea377b091272893a88f2ead9d316"
+    "status": "submitted",
+    "report_sha256": "ef89e3dde9cfb5637c3d701fd391a44411d0ea377b091272893a88f2ead9d316",
+    "confirmation": "Your response has been recorded"
+  },
+  "notebook_execution": {
+    "version": 1,
+    "status": "successful",
+    "runtime_seconds": 402.5,
+    "inference_seconds": 379.3,
+    "images": 180,
+    "instances": 1312,
+    "sha256": "65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab",
+    "identical_to_submitted_csv": true
   }
 }
