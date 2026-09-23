@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-09-23",
+  "repository": "https://github.com/regmi-sijan/solar-filament-segmentation-2026",
+  "kaggle_submission": {
+    "submitted_at": "2026-09-23T11:06:55-05:00",
+    "status": "Complete",
+    "public_score_displayed": 0.15,
+    "selected_for_final_score": true,
+    "filename": "submission.csv",
+    "sha256": "65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab"
+  },
+  "kaggle_notebook": "https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible",
+  "notebook_publication": "in_progress",
+  "organizers_form": {
+    "status": "prepared_awaiting_captcha",
+    "report_sha256": "ef89e3dde9cfb5637c3d701fd391a44411d0ea377b091272893a88f2ead9d316"
+  }
+}

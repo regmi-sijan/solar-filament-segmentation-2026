@@ -1,0 +1,68 @@
+{
+  "training_images": 707,
+  "test_images": 180,
+  "annotation_records": 8199,
+  "annotation_image_records": 1154,
+  "annotation_sets_per_source_image": {
+    "1": 411,
+    "2": 145,
+    "3": 151
+  },
+  "image_modes": {
+    "L": 887
+  },
+  "image_dimensions": {
+    "(2048, 2048)": 887
+  },
+  "unreadable_images": [],
+  "duplicate_image_record_ids": 0,
+  "duplicate_annotation_ids": 0,
+  "orphan_annotations": 0,
+  "image_records_without_annotations": 0,
+  "invalid_polygon_structures": [],
+  "nonpositive_annotation_areas": 0,
+  "area_pixels_percentiles": {
+    "min": 9.0,
+    "p25": 670.0,
+    "median": 1228.0,
+    "p75": 2438.0,
+    "p95": 6946.79999999999,
+    "max": 37739.0
+  },
+  "train_test_filename_overlap": [],
+  "byte_identical_image_groups": [],
+  "annotations_per_image_record_percentiles": {
+    "min": 1.0,
+    "median": 7.0,
+    "p95": 15.0,
+    "max": 26.0
+  },
+  "training_years": {
+    "2011": 86,
+    "2012": 92,
+    "2013": 101,
+    "2014": 102,
+    "2015": 86,
+    "2016": 80,
+    "2017": 71,
+    "2018": 26,
+    "2019": 14,
+    "2020": 9,
+    "2021": 28,
+    "2022": 12
+  },
+  "test_years": {
+    "2011": 24,
+    "2012": 23,
+    "2013": 23,
+    "2014": 22,
+    "2015": 17,
+    "2016": 22,
+    "2017": 19,
+    "2018": 4,
+    "2019": 2,
+    "2020": 3,
+    "2021": 14,
+    "2022": 7
+  }
+}

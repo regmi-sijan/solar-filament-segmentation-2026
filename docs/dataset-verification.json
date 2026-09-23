@@ -1,0 +1,12 @@
+{
+  "archive_files": 888,
+  "archive_crc_check": "passed",
+  "extracted_files_crc_check": "passed",
+  "archive_sha256": "56d8cd2927859fa7df72bd28ad1586f53c5814df6f81db02e755223e430657df",
+  "training_images": 707,
+  "test_images": 180,
+  "annotation_image_records": 1154,
+  "filament_annotations": 8199,
+  "missing_training_images": [],
+  "repaired_or_extracted_files": 0
+}
