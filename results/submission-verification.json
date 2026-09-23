@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "rows": 1312,
+  "test_images_processed": 180,
+  "images_with_predictions": 175,
+  "images_without_predictions": [
+    "20170516134450Bh",
+    "20180507140210Th",
+    "20181030230030Lh",
+    "20200310113230Ch",
+    "20211214174010Mh"
+  ],
+  "sha256": "65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab"
+}

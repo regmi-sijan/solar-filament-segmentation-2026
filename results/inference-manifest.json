@@ -1,0 +1,913 @@
+{
+  "config": {
+    "scale": 2,
+    "threshold": 0.04,
+    "closing_radius": 0,
+    "min_area": 800,
+    "max_area": 100000,
+    "min_elongation": 2.0
+  },
+  "seconds": 71.87060379981995,
+  "images": [
+    {
+      "file_name": "20110120105534Ch.jpeg",
+      "instances": 4,
+      "seconds": 0.3727552890777588
+    },
+    {
+      "file_name": "20110130110334Ch.jpeg",
+      "instances": 1,
+      "seconds": 0.33736610412597656
+    },
+    {
+      "file_name": "20110214175414Mh.jpeg",
+      "instances": 16,
+      "seconds": 0.4142289161682129
+    },
+    {
+      "file_name": "20110329082654Uh.jpeg",
+      "instances": 9,
+      "seconds": 0.4171628952026367
+    },
+    {
+      "file_name": "20110408083214Th.jpeg",
+      "instances": 10,
+      "seconds": 0.39953112602233887
+    },
+    {
+      "file_name": "20110424064534Lh.jpeg",
+      "instances": 10,
+      "seconds": 0.38244199752807617
+    },
+    {
+      "file_name": "20110429120534Ch.jpeg",
+      "instances": 9,
+      "seconds": 0.39168787002563477
+    },
+    {
+      "file_name": "20110529063154Uh.jpeg",
+      "instances": 5,
+      "seconds": 0.36100006103515625
+    },
+    {
+      "file_name": "20110531070514Th.jpeg",
+      "instances": 8,
+      "seconds": 0.3803088665008545
+    },
+    {
+      "file_name": "20110603123034Ch.jpeg",
+      "instances": 10,
+      "seconds": 0.39574408531188965
+    },
+    {
+      "file_name": "20110706164014Mh.jpeg",
+      "instances": 6,
+      "seconds": 0.48270320892333984
+    },
+    {
+      "file_name": "20110811121534Ch.jpeg",
+      "instances": 9,
+      "seconds": 0.38112878799438477
+    },
+    {
+      "file_name": "20110819131834Ch.jpeg",
+      "instances": 7,
+      "seconds": 0.39702773094177246
+    },
+    {
+      "file_name": "20110827141254Bh.jpeg",
+      "instances": 5,
+      "seconds": 0.3809070587158203
+    },
+    {
+      "file_name": "20110912142254Bh.jpeg",
+      "instances": 9,
+      "seconds": 0.4071230888366699
+    },
+    {
+      "file_name": "20111015063134Lh.jpeg",
+      "instances": 15,
+      "seconds": 0.4109461307525635
+    },
+    {
+      "file_name": "20111017113714Th.jpeg",
+      "instances": 7,
+      "seconds": 0.367999792098999
+    },
+    {
+      "file_name": "20111114063134Lh.jpeg",
+      "instances": 11,
+      "seconds": 0.4219810962677002
+    },
+    {
+      "file_name": "20111122063134Lh.jpeg",
+      "instances": 14,
+      "seconds": 0.4055328369140625
+    },
+    {
+      "file_name": "20111124153054Bh.jpeg",
+      "instances": 10,
+      "seconds": 0.3809328079223633
+    },
+    {
+      "file_name": "20111128175514Mh.jpeg",
+      "instances": 9,
+      "seconds": 0.3788471221923828
+    },
+    {
+      "file_name": "20111208173814Mh.jpeg",
+      "instances": 15,
+      "seconds": 0.46978306770324707
+    },
+    {
+      "file_name": "20111216103234Ch.jpeg",
+      "instances": 8,
+      "seconds": 0.3861870765686035
+    },
+    {
+      "file_name": "20111216174914Mh.jpeg",
+      "instances": 8,
+      "seconds": 0.37238407135009766
+    },
+    {
+      "file_name": "20120107063134Lh.jpeg",
+      "instances": 10,
+      "seconds": 0.38602209091186523
+    },
+    {
+      "file_name": "20120111191454Bh.jpeg",
+      "instances": 7,
+      "seconds": 0.3998589515686035
+    },
+    {
+      "file_name": "20120115063134Lh.jpeg",
+      "instances": 12,
+      "seconds": 0.3962399959564209
+    },
+    {
+      "file_name": "20120218152654Bh.jpeg",
+      "instances": 8,
+      "seconds": 0.3679509162902832
+    },
+    {
+      "file_name": "20120402105814Th.jpeg",
+      "instances": 3,
+      "seconds": 0.354341983795166
+    },
+    {
+      "file_name": "20120402164214Mh.jpeg",
+      "instances": 5,
+      "seconds": 0.46445488929748535
+    },
+    {
+      "file_name": "20120405130014Th.jpeg",
+      "instances": 5,
+      "seconds": 0.409365177154541
+    },
+    {
+      "file_name": "20120512063234Lh.jpeg",
+      "instances": 13,
+      "seconds": 0.4876890182495117
+    },
+    {
+      "file_name": "20120528063154Uh.jpeg",
+      "instances": 6,
+      "seconds": 0.460827112197876
+    },
+    {
+      "file_name": "20120606063154Uh.jpeg",
+      "instances": 4,
+      "seconds": 0.4250781536102295
+    },
+    {
+      "file_name": "20120622063154Uh.jpeg",
+      "instances": 5,
+      "seconds": 0.7896931171417236
+    },
+    {
+      "file_name": "20120707070914Th.jpeg",
+      "instances": 10,
+      "seconds": 0.7222616672515869
+    },
+    {
+      "file_name": "20120710063134Lh.jpeg",
+      "instances": 12,
+      "seconds": 0.532217264175415
+    },
+    {
+      "file_name": "20120730072014Th.jpeg",
+      "instances": 10,
+      "seconds": 0.7108757495880127
+    },
+    {
+      "file_name": "20120813063134Lh.jpeg",
+      "instances": 9,
+      "seconds": 0.5254101753234863
+    },
+    {
+      "file_name": "20120930063534Lh.jpeg",
+      "instances": 12,
+      "seconds": 0.5633590221405029
+    },
+    {
+      "file_name": "20121024073354Uh.jpeg",
+      "instances": 8,
+      "seconds": 0.5666868686676025
+    },
+    {
+      "file_name": "20121125063154Uh.jpeg",
+      "instances": 9,
+      "seconds": 0.5499289035797119
+    },
+    {
+      "file_name": "20121203063334Lh.jpeg",
+      "instances": 7,
+      "seconds": 0.5598127841949463
+    },
+    {
+      "file_name": "20121206063154Uh.jpeg",
+      "instances": 10,
+      "seconds": 0.42313599586486816
+    },
+    {
+      "file_name": "20121216154954Bh.jpeg",
+      "instances": 8,
+      "seconds": 0.3850669860839844
+    },
+    {
+      "file_name": "20121220110614Th.jpeg",
+      "instances": 7,
+      "seconds": 0.370197057723999
+    },
+    {
+      "file_name": "20121229085414Th.jpeg",
+      "instances": 3,
+      "seconds": 0.34975695610046387
+    },
+    {
+      "file_name": "20130104104234Ch.jpeg",
+      "instances": 11,
+      "seconds": 0.416583776473999
+    },
+    {
+      "file_name": "20130110085614Th.jpeg",
+      "instances": 8,
+      "seconds": 0.4081389904022217
+    },
+    {
+      "file_name": "20130206063154Uh.jpeg",
+      "instances": 9,
+      "seconds": 0.4408419132232666
+    },
+    {
+      "file_name": "20130208063134Lh.jpeg",
+      "instances": 19,
+      "seconds": 0.5430881977081299
+    },
+    {
+      "file_name": "20130213063454Uh.jpeg",
+      "instances": 2,
+      "seconds": 0.36243462562561035
+    },
+    {
+      "file_name": "20130310063154Uh.jpeg",
+      "instances": 10,
+      "seconds": 0.4267749786376953
+    },
+    {
+      "file_name": "20130315063154Uh.jpeg",
+      "instances": 8,
+      "seconds": 0.393172025680542
+    },
+    {
+      "file_name": "20130328063154Uh.jpeg",
+      "instances": 6,
+      "seconds": 0.36542797088623047
+    },
+    {
+      "file_name": "20130521063134Lh.jpeg",
+      "instances": 7,
+      "seconds": 0.3690049648284912
+    },
+    {
+      "file_name": "20130526063134Lh.jpeg",
+      "instances": 20,
+      "seconds": 0.46460723876953125
+    },
+    {
+      "file_name": "20130530133654Bh.jpeg",
+      "instances": 10,
+      "seconds": 0.44551801681518555
+    },
+    {
+      "file_name": "20130603063154Uh.jpeg",
+      "instances": 3,
+      "seconds": 0.38710618019104004
+    },
+    {
+      "file_name": "20130606133454Bh.jpeg",
+      "instances": 6,
+      "seconds": 0.4039320945739746
+    },
+    {
+      "file_name": "20130609133454Bh.jpeg",
+      "instances": 9,
+      "seconds": 0.4320409297943115
+    },
+    {
+      "file_name": "20130627063134Lh.jpeg",
+      "instances": 6,
+      "seconds": 0.3920629024505615
+    },
+    {
+      "file_name": "20130702070714Th.jpeg",
+      "instances": 7,
+      "seconds": 0.36446475982666016
+    },
+    {
+      "file_name": "20130811121434Ch.jpeg",
+      "instances": 6,
+      "seconds": 0.3531463146209717
+    },
+    {
+      "file_name": "20130825141154Bh.jpeg",
+      "instances": 8,
+      "seconds": 0.3764948844909668
+    },
+    {
+      "file_name": "20131027185354Bh.jpeg",
+      "instances": 15,
+      "seconds": 0.4283730983734131
+    },
+    {
+      "file_name": "20131027223034Lh.jpeg",
+      "instances": 7,
+      "seconds": 0.36095690727233887
+    },
+    {
+      "file_name": "20131110185354Bh.jpeg",
+      "instances": 12,
+      "seconds": 0.39992809295654297
+    },
+    {
+      "file_name": "20131217192134Ch.jpeg",
+      "instances": 10,
+      "seconds": 0.41248583793640137
+    },
+    {
+      "file_name": "20131230192154Bh.jpeg",
+      "instances": 10,
+      "seconds": 0.3915872573852539
+    },
+    {
+      "file_name": "20140118180214Mh.jpeg",
+      "instances": 13,
+      "seconds": 0.39213085174560547
+    },
+    {
+      "file_name": "20140309170314Mh.jpeg",
+      "instances": 11,
+      "seconds": 0.39620184898376465
+    },
+    {
+      "file_name": "20140322200714Mh.jpeg",
+      "instances": 18,
+      "seconds": 0.45297694206237793
+    },
+    {
+      "file_name": "20140403081714Th.jpeg",
+      "instances": 8,
+      "seconds": 0.36975908279418945
+    },
+    {
+      "file_name": "20140410195814Mh.jpeg",
+      "instances": 5,
+      "seconds": 0.3445713520050049
+    },
+    {
+      "file_name": "20140420195854Bh.jpeg",
+      "instances": 14,
+      "seconds": 0.42609190940856934
+    },
+    {
+      "file_name": "20140514195854Bh.jpeg",
+      "instances": 12,
+      "seconds": 0.42464208602905273
+    },
+    {
+      "file_name": "20140516234034Lh.jpeg",
+      "instances": 16,
+      "seconds": 0.4300518035888672
+    },
+    {
+      "file_name": "20140519195834Ch.jpeg",
+      "instances": 13,
+      "seconds": 0.4034757614135742
+    },
+    {
+      "file_name": "20140520200054Bh.jpeg",
+      "instances": 7,
+      "seconds": 0.40889811515808105
+    },
+    {
+      "file_name": "20140526195834Ch.jpeg",
+      "instances": 11,
+      "seconds": 0.3903779983520508
+    },
+    {
+      "file_name": "20140629195814Mh.jpeg",
+      "instances": 7,
+      "seconds": 0.3642117977142334
+    },
+    {
+      "file_name": "20140707023654Uh.jpeg",
+      "instances": 24,
+      "seconds": 0.45984625816345215
+    },
+    {
+      "file_name": "20140710020754Uh.jpeg",
+      "instances": 11,
+      "seconds": 0.41915416717529297
+    },
+    {
+      "file_name": "20140828080414Th.jpeg",
+      "instances": 15,
+      "seconds": 0.40764498710632324
+    },
+    {
+      "file_name": "20140907195814Mh.jpeg",
+      "instances": 11,
+      "seconds": 0.39774489402770996
+    },
+    {
+      "file_name": "20140925195834Ch.jpeg",
+      "instances": 19,
+      "seconds": 0.45795106887817383
+    },
+    {
+      "file_name": "20141009195814Mh.jpeg",
+      "instances": 9,
+      "seconds": 0.3958768844604492
+    },
+    {
+      "file_name": "20141104195854Bh.jpeg",
+      "instances": 9,
+      "seconds": 0.3702249526977539
+    },
+    {
+      "file_name": "20141120195834Ch.jpeg",
+      "instances": 19,
+      "seconds": 0.4258852005004883
+    },
+    {
+      "file_name": "20141220201934Ch.jpeg",
+      "instances": 7,
+      "seconds": 0.37891316413879395
+    },
+    {
+      "file_name": "20141222201814Mh.jpeg",
+      "instances": 12,
+      "seconds": 0.4024171829223633
+    },
+    {
+      "file_name": "20150105104334Ch.jpeg",
+      "instances": 12,
+      "seconds": 0.38924312591552734
+    },
+    {
+      "file_name": "20150124081954Uh.jpeg",
+      "instances": 3,
+      "seconds": 0.33536601066589355
+    },
+    {
+      "file_name": "20150430082014Th.jpeg",
+      "instances": 10,
+      "seconds": 0.4095339775085449
+    },
+    {
+      "file_name": "20150601122834Ch.jpeg",
+      "instances": 6,
+      "seconds": 0.369168758392334
+    },
+    {
+      "file_name": "20150602122934Ch.jpeg",
+      "instances": 10,
+      "seconds": 0.38745903968811035
+    },
+    {
+      "file_name": "20150619133554Bh.jpeg",
+      "instances": 12,
+      "seconds": 0.40567660331726074
+    },
+    {
+      "file_name": "20150620161314Mh.jpeg",
+      "instances": 16,
+      "seconds": 0.42310595512390137
+    },
+    {
+      "file_name": "20150623152934Ch.jpeg",
+      "instances": 7,
+      "seconds": 0.356334924697876
+    },
+    {
+      "file_name": "20150913082034Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.3375208377838135
+    },
+    {
+      "file_name": "20151003081954Uh.jpeg",
+      "instances": 2,
+      "seconds": 0.3358628749847412
+    },
+    {
+      "file_name": "20151015170634Ch.jpeg",
+      "instances": 6,
+      "seconds": 0.40189218521118164
+    },
+    {
+      "file_name": "20151026171014Mh.jpeg",
+      "instances": 8,
+      "seconds": 0.3831820487976074
+    },
+    {
+      "file_name": "20151117212434Ch.jpeg",
+      "instances": 7,
+      "seconds": 0.36556005477905273
+    },
+    {
+      "file_name": "20151204133714Th.jpeg",
+      "instances": 1,
+      "seconds": 0.3679962158203125
+    },
+    {
+      "file_name": "20151207173614Mh.jpeg",
+      "instances": 4,
+      "seconds": 0.3754711151123047
+    },
+    {
+      "file_name": "20151214171854Bh.jpeg",
+      "instances": 11,
+      "seconds": 0.41991615295410156
+    },
+    {
+      "file_name": "20151227133734Ch.jpeg",
+      "instances": 13,
+      "seconds": 0.43234801292419434
+    },
+    {
+      "file_name": "20160116133734Ch.jpeg",
+      "instances": 9,
+      "seconds": 0.38228678703308105
+    },
+    {
+      "file_name": "20160226151654Bh.jpeg",
+      "instances": 6,
+      "seconds": 0.36879396438598633
+    },
+    {
+      "file_name": "20160311020654Uh.jpeg",
+      "instances": 7,
+      "seconds": 0.38897204399108887
+    },
+    {
+      "file_name": "20160312020554Uh.jpeg",
+      "instances": 4,
+      "seconds": 0.36899614334106445
+    },
+    {
+      "file_name": "20160327133714Th.jpeg",
+      "instances": 9,
+      "seconds": 0.37375307083129883
+    },
+    {
+      "file_name": "20160327133734Ch.jpeg",
+      "instances": 5,
+      "seconds": 0.3451080322265625
+    },
+    {
+      "file_name": "20160405014154Uh.jpeg",
+      "instances": 5,
+      "seconds": 0.3586571216583252
+    },
+    {
+      "file_name": "20160505025554Uh.jpeg",
+      "instances": 3,
+      "seconds": 0.36952877044677734
+    },
+    {
+      "file_name": "20160513133714Th.jpeg",
+      "instances": 3,
+      "seconds": 0.36606693267822266
+    },
+    {
+      "file_name": "20160602010754Uh.jpeg",
+      "instances": 2,
+      "seconds": 0.33649206161499023
+    },
+    {
+      "file_name": "20160713133714Th.jpeg",
+      "instances": 8,
+      "seconds": 0.3698000907897949
+    },
+    {
+      "file_name": "20160820233134Lh.jpeg",
+      "instances": 1,
+      "seconds": 0.37624096870422363
+    },
+    {
+      "file_name": "20160828133734Ch.jpeg",
+      "instances": 12,
+      "seconds": 0.41228795051574707
+    },
+    {
+      "file_name": "20160930165914Mh.jpeg",
+      "instances": 12,
+      "seconds": 0.4005401134490967
+    },
+    {
+      "file_name": "20161015144954Bh.jpeg",
+      "instances": 2,
+      "seconds": 0.3443610668182373
+    },
+    {
+      "file_name": "20161019133714Th.jpeg",
+      "instances": 4,
+      "seconds": 0.367107629776001
+    },
+    {
+      "file_name": "20161020145454Bh.jpeg",
+      "instances": 1,
+      "seconds": 0.3324859142303467
+    },
+    {
+      "file_name": "20161104133714Th.jpeg",
+      "instances": 4,
+      "seconds": 0.34390997886657715
+    },
+    {
+      "file_name": "20161111133734Ch.jpeg",
+      "instances": 3,
+      "seconds": 0.34558892250061035
+    },
+    {
+      "file_name": "20161116222134Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.37258434295654297
+    },
+    {
+      "file_name": "20161219133734Ch.jpeg",
+      "instances": 4,
+      "seconds": 0.36213016510009766
+    },
+    {
+      "file_name": "20161231223534Lh.jpeg",
+      "instances": 5,
+      "seconds": 0.5164070129394531
+    },
+    {
+      "file_name": "20170129133714Th.jpeg",
+      "instances": 5,
+      "seconds": 0.48105502128601074
+    },
+    {
+      "file_name": "20170313145450Bh.jpeg",
+      "instances": 9,
+      "seconds": 0.4509429931640625
+    },
+    {
+      "file_name": "20170326133730Ch.jpeg",
+      "instances": 3,
+      "seconds": 0.36564207077026367
+    },
+    {
+      "file_name": "20170328014950Uh.jpeg",
+      "instances": 3,
+      "seconds": 0.34152674674987793
+    },
+    {
+      "file_name": "20170329014850Uh.jpeg",
+      "instances": 3,
+      "seconds": 0.3430900573730469
+    },
+    {
+      "file_name": "20170330133710Th.jpeg",
+      "instances": 1,
+      "seconds": 0.3642542362213135
+    },
+    {
+      "file_name": "20170414151450Bh.jpeg",
+      "instances": 2,
+      "seconds": 0.36412978172302246
+    },
+    {
+      "file_name": "20170516134450Bh.jpeg",
+      "instances": 0,
+      "seconds": 0.3249359130859375
+    },
+    {
+      "file_name": "20170626133730Ch.jpeg",
+      "instances": 1,
+      "seconds": 0.3488280773162842
+    },
+    {
+      "file_name": "20170708164010Mh.jpeg",
+      "instances": 2,
+      "seconds": 0.36188483238220215
+    },
+    {
+      "file_name": "20170902231930Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.3875858783721924
+    },
+    {
+      "file_name": "20170926225530Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.3530428409576416
+    },
+    {
+      "file_name": "20171018223630Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.3584778308868408
+    },
+    {
+      "file_name": "20171021223430Lh.jpeg",
+      "instances": 4,
+      "seconds": 0.3784360885620117
+    },
+    {
+      "file_name": "20171027150050Bh.jpeg",
+      "instances": 6,
+      "seconds": 0.4295363426208496
+    },
+    {
+      "file_name": "20171029171010Mh.jpeg",
+      "instances": 5,
+      "seconds": 0.37157607078552246
+    },
+    {
+      "file_name": "20171107222630Lh.jpeg",
+      "instances": 2,
+      "seconds": 0.3524637222290039
+    },
+    {
+      "file_name": "20171108222430Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.34400105476379395
+    },
+    {
+      "file_name": "20171122022450Uh.jpeg",
+      "instances": 4,
+      "seconds": 0.37717103958129883
+    },
+    {
+      "file_name": "20180507140210Th.jpeg",
+      "instances": 0,
+      "seconds": 0.32570505142211914
+    },
+    {
+      "file_name": "20180726232450Bh.jpeg",
+      "instances": 7,
+      "seconds": 0.3717782497406006
+    },
+    {
+      "file_name": "20181012105930Ch.jpeg",
+      "instances": 2,
+      "seconds": 0.4084970951080322
+    },
+    {
+      "file_name": "20181030230030Lh.jpeg",
+      "instances": 0,
+      "seconds": 0.3477919101715088
+    },
+    {
+      "file_name": "20190605025430Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.3546900749206543
+    },
+    {
+      "file_name": "20190607032610Mh.jpeg",
+      "instances": 4,
+      "seconds": 0.3645188808441162
+    },
+    {
+      "file_name": "20200310113230Ch.jpeg",
+      "instances": 0,
+      "seconds": 0.3424527645111084
+    },
+    {
+      "file_name": "20200806072410Th.jpeg",
+      "instances": 2,
+      "seconds": 0.3779881000518799
+    },
+    {
+      "file_name": "20201228202510Mh.jpeg",
+      "instances": 5,
+      "seconds": 0.36527109146118164
+    },
+    {
+      "file_name": "20210101202450Bh.jpeg",
+      "instances": 2,
+      "seconds": 0.35083699226379395
+    },
+    {
+      "file_name": "20210127110130Ch.jpeg",
+      "instances": 2,
+      "seconds": 0.3540530204772949
+    },
+    {
+      "file_name": "20210219230330Lh.jpeg",
+      "instances": 2,
+      "seconds": 0.3750481605529785
+    },
+    {
+      "file_name": "20210607142350Bh.jpeg",
+      "instances": 2,
+      "seconds": 0.34353184700012207
+    },
+    {
+      "file_name": "20210627163630Mh.jpeg",
+      "instances": 7,
+      "seconds": 0.3707010746002197
+    },
+    {
+      "file_name": "20210701163730Mh.jpeg",
+      "instances": 8,
+      "seconds": 0.37050700187683105
+    },
+    {
+      "file_name": "20210708060030Lh.jpeg",
+      "instances": 1,
+      "seconds": 0.3968489170074463
+    },
+    {
+      "file_name": "20210726041650Uh.jpeg",
+      "instances": 2,
+      "seconds": 0.36156582832336426
+    },
+    {
+      "file_name": "20210730044930Lh.jpeg",
+      "instances": 3,
+      "seconds": 0.35666322708129883
+    },
+    {
+      "file_name": "20210811072510Th.jpeg",
+      "instances": 1,
+      "seconds": 0.3361079692840576
+    },
+    {
+      "file_name": "20211119005210Mh.jpeg",
+      "instances": 2,
+      "seconds": 0.35987186431884766
+    },
+    {
+      "file_name": "20211214174010Mh.jpeg",
+      "instances": 0,
+      "seconds": 0.3330700397491455
+    },
+    {
+      "file_name": "20211224120130Ch.jpeg",
+      "instances": 7,
+      "seconds": 0.36962032318115234
+    },
+    {
+      "file_name": "20211231180850Bh.jpeg",
+      "instances": 4,
+      "seconds": 0.34960007667541504
+    },
+    {
+      "file_name": "20220124155050Bh.jpeg",
+      "instances": 5,
+      "seconds": 0.37605977058410645
+    },
+    {
+      "file_name": "20220328035030Lh.jpeg",
+      "instances": 19,
+      "seconds": 0.4918398857116699
+    },
+    {
+      "file_name": "20220523234912Lh.jpeg",
+      "instances": 13,
+      "seconds": 0.3995547294616699
+    },
+    {
+      "file_name": "20220621185332Bh.jpeg",
+      "instances": 7,
+      "seconds": 0.38259029388427734
+    },
+    {
+      "file_name": "20220626185332Bh.jpeg",
+      "instances": 6,
+      "seconds": 0.4119389057159424
+    },
+    {
+      "file_name": "20220714185352Th.jpeg",
+      "instances": 8,
+      "seconds": 0.41436290740966797
+    },
+    {
+      "file_name": "20220728185352Th.jpeg",
+      "instances": 5,
+      "seconds": 0.35559511184692383
+    }
+  ]
+}

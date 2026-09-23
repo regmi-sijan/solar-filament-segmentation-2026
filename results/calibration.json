@@ -1,0 +1,1416 @@
+{
+  "seconds": 595.6790359020233,
+  "images": 111,
+  "trials": [
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 357,
+      "fp": 1018,
+      "fn": 888,
+      "sum_iou": 230.794847787124,
+      "pq": 0.176179273119942
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 294,
+      "fp": 652,
+      "fn": 951,
+      "sum_iou": 191.1066286930626,
+      "pq": 0.17444694540672076
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 277,
+      "fp": 590,
+      "fn": 968,
+      "sum_iou": 181.40568797986552,
+      "pq": 0.17178568937487265
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 326,
+      "fp": 888,
+      "fn": 919,
+      "sum_iou": 211.069475878355,
+      "pq": 0.17167098485429444
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 256,
+      "fp": 472,
+      "fn": 989,
+      "sum_iou": 168.3015827398496,
+      "pq": 0.17060474682194587
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 467,
+      "fp": 1918,
+      "fn": 778,
+      "sum_iou": 300.71646041521586,
+      "pq": 0.16568400022876906
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 348,
+      "fp": 1121,
+      "fn": 897,
+      "sum_iou": 224.18646565012705,
+      "pq": 0.1652074175756279
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 376,
+      "fp": 1306,
+      "fn": 869,
+      "sum_iou": 241.00846427835612,
+      "pq": 0.16467951095207115
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 395,
+      "fp": 1480,
+      "fn": 850,
+      "sum_iou": 254.32106458931327,
+      "pq": 0.16302632345468798
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 373,
+      "fp": 1433,
+      "fn": 872,
+      "sum_iou": 240.94559864940476,
+      "pq": 0.1579453285148507
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 424,
+      "fp": 1786,
+      "fn": 821,
+      "sum_iou": 270.6678456519362,
+      "pq": 0.15668182092731472
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 386,
+      "fp": 1552,
+      "fn": 859,
+      "sum_iou": 247.69888279048087,
+      "pq": 0.1556386319764253
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 218,
+      "fp": 460,
+      "fn": 1027,
+      "sum_iou": 141.9621199838881,
+      "pq": 0.14764651064366938
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 209,
+      "fp": 395,
+      "fn": 1036,
+      "sum_iou": 136.1871208846542,
+      "pq": 0.14730894633277902
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 280,
+      "fp": 942,
+      "fn": 965,
+      "sum_iou": 181.00144589741282,
+      "pq": 0.146738099633087
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 519,
+      "fp": 2797,
+      "fn": 726,
+      "sum_iou": 333.7628600194942,
+      "pq": 0.14635512388489114
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 239,
+      "fp": 670,
+      "fn": 1006,
+      "sum_iou": 157.2777930656878,
+      "pq": 0.14603323404427837
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 257,
+      "fp": 840,
+      "fn": 988,
+      "sum_iou": 168.57049321347603,
+      "pq": 0.14395430675787876
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 344,
+      "fp": 1477,
+      "fn": 901,
+      "sum_iou": 219.48587438074028,
+      "pq": 0.14317408635403803
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 404,
+      "fp": 1985,
+      "fn": 841,
+      "sum_iou": 260.06077426478504,
+      "pq": 0.14312645804335997
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 306,
+      "fp": 1243,
+      "fn": 939,
+      "sum_iou": 197.09507390634198,
+      "pq": 0.14108451961799712
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 471,
+      "fp": 2596,
+      "fn": 774,
+      "sum_iou": 303.89007562312185,
+      "pq": 0.14095086995506578
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 269,
+      "fp": 928,
+      "fn": 976,
+      "sum_iou": 170.5786663050433,
+      "pq": 0.13970406740789787
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 371,
+      "fp": 1781,
+      "fn": 874,
+      "sum_iou": 237.24309356486003,
+      "pq": 0.1396780062201119
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 295,
+      "fp": 1229,
+      "fn": 950,
+      "sum_iou": 186.8347767370671,
+      "pq": 0.13494747326620954
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 384,
+      "fp": 2008,
+      "fn": 861,
+      "sum_iou": 243.88399184029356,
+      "pq": 0.13411272578514905
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 384,
+      "fp": 2008,
+      "fn": 861,
+      "sum_iou": 243.88399184029356,
+      "pq": 0.13411272578514905
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 181,
+      "fp": 343,
+      "fn": 1064,
+      "sum_iou": 118.47617060326586,
+      "pq": 0.1339470555152808
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 188,
+      "fp": 406,
+      "fn": 1057,
+      "sum_iou": 122.75704738747746,
+      "pq": 0.13350412983956222
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 479,
+      "fp": 3057,
+      "fn": 766,
+      "sum_iou": 307.48579840460843,
+      "pq": 0.12862823610316187
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 417,
+      "fp": 2480,
+      "fn": 828,
+      "sum_iou": 265.52906049411627,
+      "pq": 0.12821296981850133
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 417,
+      "fp": 2480,
+      "fn": 828,
+      "sum_iou": 265.52906049411627,
+      "pq": 0.12821296981850133
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 237,
+      "fp": 887,
+      "fn": 1008,
+      "sum_iou": 150.544079815515,
+      "pq": 0.1270950441667497
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 191,
+      "fp": 525,
+      "fn": 1054,
+      "sum_iou": 124.05174121788797,
+      "pq": 0.12651885896775927
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 202,
+      "fp": 625,
+      "fn": 1043,
+      "sum_iou": 130.6346260308933,
+      "pq": 0.12609519887151863
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 373,
+      "fp": 2170,
+      "fn": 872,
+      "sum_iou": 234.91509551487889,
+      "pq": 0.12403120143341018
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 261,
+      "fp": 1165,
+      "fn": 984,
+      "sum_iou": 165.33075493573685,
+      "pq": 0.12379689624540385
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 266,
+      "fp": 1219,
+      "fn": 979,
+      "sum_iou": 165.57073878122065,
+      "pq": 0.12129724452836678
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 526,
+      "fp": 3821,
+      "fn": 719,
+      "sum_iou": 338.74544779034613,
+      "pq": 0.12115359363030978
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 181,
+      "fp": 518,
+      "fn": 1064,
+      "sum_iou": 116.4257603157513,
+      "pq": 0.11977958880221327
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 172,
+      "fp": 453,
+      "fn": 1073,
+      "sum_iou": 111.10264431162422,
+      "pq": 0.11882635755253927
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 239,
+      "fp": 1073,
+      "fn": 1006,
+      "sum_iou": 148.73612267241495,
+      "pq": 0.11633642758890493
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 291,
+      "fp": 1592,
+      "fn": 954,
+      "sum_iou": 180.34882163977932,
+      "pq": 0.1153125458054855
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 257,
+      "fp": 1400,
+      "fn": 988,
+      "sum_iou": 159.36768312388145,
+      "pq": 0.1098330000853766
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 530,
+      "fp": 4748,
+      "fn": 715,
+      "sum_iou": 339.4190705978857,
+      "pq": 0.10406839509363351
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 141,
+      "fp": 361,
+      "fn": 1104,
+      "sum_iou": 90.5563953035165,
+      "pq": 0.10367074448027075
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 137,
+      "fp": 320,
+      "fn": 1108,
+      "sum_iou": 87.80571639055921,
+      "pq": 0.10317945521804843
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 490,
+      "fp": 4381,
+      "fn": 755,
+      "sum_iou": 312.9008159293698,
+      "pq": 0.10232204575845971
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 378,
+      "fp": 3194,
+      "fn": 867,
+      "sum_iou": 239.4070834396409,
+      "pq": 0.09940090655579858
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 415,
+      "fp": 3681,
+      "fn": 830,
+      "sum_iou": 260.39715791276546,
+      "pq": 0.09750876536707188
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 124,
+      "fp": 306,
+      "fn": 1121,
+      "sum_iou": 79.7810596636316,
+      "pq": 0.09526096676254518
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 120,
+      "fp": 279,
+      "fn": 1125,
+      "sum_iou": 77.11827436237655,
+      "pq": 0.0938178520223559
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 126,
+      "fp": 355,
+      "fn": 1119,
+      "sum_iou": 78.78274661026268,
+      "pq": 0.09128939352289997
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 128,
+      "fp": 389,
+      "fn": 1117,
+      "sum_iou": 79.85122251964266,
+      "pq": 0.09063702896667726
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 114,
+      "fp": 293,
+      "fn": 1131,
+      "sum_iou": 70.76659387416211,
+      "pq": 0.08567384246266599
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.1,
+        "closing_radius": 0,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 116,
+      "fp": 325,
+      "fn": 1129,
+      "sum_iou": 71.80857822048574,
+      "pq": 0.08518218056997122
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 241,
+      "fp": 2108,
+      "fn": 1004,
+      "sum_iou": 147.1483041078111,
+      "pq": 0.0818855337272182
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 515,
+      "fp": 6354,
+      "fn": 730,
+      "sum_iou": 329.16253612306133,
+      "pq": 0.0811344678637075
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.06,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 542,
+      "fp": 6741,
+      "fn": 703,
+      "sum_iou": 345.65492836151725,
+      "pq": 0.08106353854632206
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.12,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 166,
+      "fp": 1081,
+      "fn": 1079,
+      "sum_iou": 100.14871399965115,
+      "pq": 0.08037617495959161
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 800,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 421,
+      "fp": 5066,
+      "fn": 824,
+      "sum_iou": 266.25424309760854,
+      "pq": 0.07910108232252185
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 201,
+      "fp": 1838,
+      "fn": 1044,
+      "sum_iou": 123.1802605738459,
+      "pq": 0.07501842909491224
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.12,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 144,
+      "fp": 1000,
+      "fn": 1101,
+      "sum_iou": 87.20407328670551,
+      "pq": 0.07300466579046087
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 531,
+      "fp": 9049,
+      "fn": 714,
+      "sum_iou": 340.130743261552,
+      "pq": 0.06284170776194957
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 580,
+      "fp": 10130,
+      "fn": 665,
+      "sum_iou": 369.9254071226899,
+      "pq": 0.06188630817610872
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.12,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 218,
+      "fp": 3789,
+      "fn": 1027,
+      "sum_iou": 130.88480624646084,
+      "pq": 0.049841891182963
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 589,
+      "fp": 14199,
+      "fn": 656,
+      "sum_iou": 376.3247253537363,
+      "pq": 0.046943769145354745
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.12,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 195,
+      "fp": 3583,
+      "fn": 1050,
+      "sum_iou": 117.29031280397277,
+      "pq": 0.046701299145519716
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 456,
+      "fp": 11321,
+      "fn": 789,
+      "sum_iou": 288.7429663567095,
+      "pq": 0.04434694614601589
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 492,
+      "fp": 13957,
+      "fn": 753,
+      "sum_iou": 307.92678115038257,
+      "pq": 0.039241338237591766
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 482,
+      "fp": 16460,
+      "fn": 763,
+      "sum_iou": 305.741302275789,
+      "pq": 0.033621960991454224
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.08,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 283,
+      "fp": 9623,
+      "fn": 962,
+      "sum_iou": 172.22586011725843,
+      "pq": 0.030889760580622084
+    },
+    {
+      "config": {
+        "scale": 2,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 547,
+      "fp": 23620,
+      "fn": 698,
+      "sum_iou": 342.2671939662657,
+      "pq": 0.026937446400619056
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 2.0
+      },
+      "tp": 479,
+      "fp": 20867,
+      "fn": 766,
+      "sum_iou": 301.9524452021139,
+      "pq": 0.026732100854509663
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.08,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 316,
+      "fp": 13346,
+      "fn": 929,
+      "sum_iou": 192.19380602087142,
+      "pq": 0.02578571221853779
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.04,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000,
+        "min_elongation": 1.0
+      },
+      "tp": 537,
+      "fp": 34642,
+      "fn": 708,
+      "sum_iou": 338.3253601998836,
+      "pq": 0.018577056896545333
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.12,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 36,
+      "fp": 1041,
+      "fn": 1209,
+      "sum_iou": 21.52539437127576,
+      "pq": 0.018540391361994625
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.16,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 29,
+      "fp": 651,
+      "fn": 1216,
+      "sum_iou": 16.914077780555772,
+      "pq": 0.01757306782395405
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.16,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 48,
+      "fp": 2046,
+      "fn": 1197,
+      "sum_iou": 27.598279484872076,
+      "pq": 0.01653086522004916
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.12,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 71,
+      "fp": 3891,
+      "fn": 1174,
+      "sum_iou": 42.25324654366592,
+      "pq": 0.01622940139952599
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.12,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 30,
+      "fp": 921,
+      "fn": 1215,
+      "sum_iou": 17.443229678626743,
+      "pq": 0.01588636582752891
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.16,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 24,
+      "fp": 601,
+      "fn": 1221,
+      "sum_iou": 13.997464365936148,
+      "pq": 0.01497055012399588
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.12,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 63,
+      "fp": 3699,
+      "fn": 1182,
+      "sum_iou": 36.767670632649505,
+      "pq": 0.014686507143059519
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.16,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 39,
+      "fp": 1988,
+      "fn": 1206,
+      "sum_iou": 22.29276336410785,
+      "pq": 0.013626383474393551
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.16,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 10,
+      "fp": 1901,
+      "fn": 1235,
+      "sum_iou": 5.740537858569413,
+      "pq": 0.0036378566911086266
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.16,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 9,
+      "fp": 1803,
+      "fn": 1236,
+      "sum_iou": 5.125143698416574,
+      "pq": 0.00335305443141418
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.2,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 4,
+      "fp": 338,
+      "fn": 1241,
+      "sum_iou": 2.307539925082877,
+      "pq": 0.0029080528356431974
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.2,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 4,
+      "fp": 317,
+      "fn": 1241,
+      "sum_iou": 2.256087653879815,
+      "pq": 0.002881337999846507
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.16,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 4,
+      "fp": 437,
+      "fn": 1241,
+      "sum_iou": 2.3082906180767537,
+      "pq": 0.0027381857865679165
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.2,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 5,
+      "fp": 1184,
+      "fn": 1240,
+      "sum_iou": 2.8650796076225595,
+      "pq": 0.0023542149610703035
+    },
+    {
+      "config": {
+        "scale": 1,
+        "threshold": 0.2,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 5,
+      "fp": 1142,
+      "fn": 1240,
+      "sum_iou": 2.8096590824512435,
+      "pq": 0.002349213279641508
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.16,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 3,
+      "fp": 401,
+      "fn": 1242,
+      "sum_iou": 1.698251841494733,
+      "pq": 0.002059735405087608
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.2,
+        "closing_radius": 2,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 1,
+      "fp": 185,
+      "fn": 1244,
+      "sum_iou": 0.5158597662771286,
+      "pq": 0.0007209780101706899
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.2,
+        "closing_radius": 0,
+        "min_area": 300,
+        "max_area": 100000
+      },
+      "tp": 1,
+      "fp": 167,
+      "fn": 1244,
+      "sum_iou": 0.5041736227045075,
+      "pq": 0.0007136215466447382
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.2,
+        "closing_radius": 2,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 1,
+      "fp": 860,
+      "fn": 1244,
+      "sum_iou": 0.5158597662771286,
+      "pq": 0.0004898953146031611
+    },
+    {
+      "config": {
+        "scale": 0,
+        "threshold": 0.2,
+        "closing_radius": 0,
+        "min_area": 100,
+        "max_area": 100000
+      },
+      "tp": 1,
+      "fp": 827,
+      "fn": 1244,
+      "sum_iou": 0.5041736227045075,
+      "pq": 0.00048641931761168113
+    }
+  ],
+  "initial_seconds": 426.6339600086212,
+  "search": "32 initial plus 64 refinement configurations; refinement selected using calibration only"
+}
