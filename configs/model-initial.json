@@ -1,0 +1,7 @@
+{
+  "scale": 1,
+  "threshold": 0.08,
+  "closing_radius": 0,
+  "min_area": 300,
+  "max_area": 100000
+}
