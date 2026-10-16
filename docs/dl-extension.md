@@ -45,6 +45,8 @@ the choice between candidates use the 111 calibration images only; each candidat
   disk_erode=10, group_dist=4, fill_holes=False`. Validation PQ 0.4271 vs 0.4111 for the v1 CSV that scored 0.33 publicly.
   ResNet50 alone scored slightly higher on validation (0.4295) but lower on calibration; the difference is within noise, and
   choosing it after seeing validation would leak.
+* Public leaderboard: the selected ensemble's CSV was submitted once as an exploratory (non-final) submission and scored
+  **0.35** (v1: 0.33, classical baseline: 0.15). The local-to-public gap (0.43 -> 0.35) is similar to v1's (0.41 -> 0.33).
 * Every new candidate beats v1 under identical scoring; the gain is modest (+0.01 to +0.02 PQ) and the confidence intervals overlap.
 * Instance grouping (merging fragments within ~2*group_dist px) adds about +0.005 PQ; the tuned thresholds are more conservative
   than v1's (low 0.6 to 0.7, high 0.85 to 0.95), trading a few true positives for fewer false positives.
