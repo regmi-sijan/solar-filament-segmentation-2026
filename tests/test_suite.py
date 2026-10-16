@@ -12,6 +12,7 @@ try:
     from filament.dl import FilamentUNet, ModelEMA, PostConfig, segment
     from filament.suite import _assign, default_suite, run_suite, summary_table
     from filament.synthetic import make_synthetic_dataset
+    from pycocotools import mask as coco
 except ImportError:  # torch is optional for the classical pipeline
     torch = None
 
@@ -126,6 +127,31 @@ class SuiteTests(unittest.TestCase):
             self.assertIn("human_agreement", metrics["diagnostics"])
             self.assertTrue(json.loads((out / "suite_metrics.json").read_text())["debug"])
             self.assertIn("selected", summary_table(metrics))
+
+    def test_compare_submissions_is_one_for_identical_files_and_lower_otherwise(self):
+        from filament.suite import compare_submissions
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp, "data")
+            make_synthetic_dataset(data, n_train=2, n_test=2, size=64)
+            stems = sorted(p.stem for p in Path(data, "test/test_images").iterdir())
+
+            def write(path, boxes):
+                with open(path, "w") as handle:
+                    handle.write("filament_id,segmentation_rle\n")
+                    for stem in stems:
+                        for n, (y0, y1, x0, x1) in enumerate(boxes, 1):
+                            mask = np.zeros((64, 64), np.uint8)
+                            mask[y0:y1, x0:x1] = 1
+                            handle.write(f"{stem}_{n},{coco.encode(np.asfortranarray(mask))['counts'].decode()}\n")
+            a, b = Path(tmp, "a.csv"), Path(tmp, "b.csv")
+            write(a, [(5, 15, 5, 40), (30, 40, 10, 50)])
+            write(b, [(5, 15, 5, 40)])
+            same = compare_submissions(a, a, Path(data, "test/test_images"))
+            self.assertAlmostEqual(same["matched_pq"], 1.0)
+            self.assertAlmostEqual(same["mean_pixel_dice"], 1.0)
+            diff = compare_submissions(a, b, Path(data, "test/test_images"))
+            self.assertEqual((diff["tp"], diff["fp"], diff["fn"]), (2, 0, 2))
+            self.assertLess(diff["mean_pixel_dice"], 1.0)
 
     def test_debug_refit_trains_on_all_labelled_images_and_writes_a_valid_csv(self):
         from filament.suite import run_refit

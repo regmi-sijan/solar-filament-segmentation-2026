@@ -98,6 +98,9 @@ def _train_worker(job: dict) -> None:
         _log(f"[{spec['name']}] device={device} gpu={torch.cuda.get_device_name(0) if device.type == 'cuda' else '-'}")
         seed_everything(cfg.seed)
         train_cases = load_cases(job["data"], job["train_names"], records, annotations, _log)
+        for case in train_cases:  # training reads only image, target, mean/std and positives
+            case.pop("disk", None)
+            case.pop("gt", None)
         tune_cases = load_cases(job["data"], job["tune_names"][: cfg.eval_images], records, annotations, _log)
         model = FilamentUNet(cfg.pretrained, cfg.encoder).to(device)
         start = time.time()
@@ -478,6 +481,46 @@ def run_refit(data_dir, split: dict, out_dir, models: list, post: dict, external
     (out_dir / "refit_metrics.json").write_text(json.dumps(metrics, indent=2))
     log(f"refit done: {verification}")
     return metrics
+
+
+def compare_submissions(reference_csv, other_csv, test_dir) -> dict:
+    """Agreement between two submission files on the test images (no labels involved).
+
+    ``matched_pq`` scores ``other`` against ``reference`` with the competition's strict IoU > 0.5
+    matching; ``mean_pixel_dice`` compares the union masks image by image. A sanity check that a
+    retrained model behaves like the validated one, not a measure of accuracy.
+    """
+    import csv as _csv
+    from collections import defaultdict
+
+    paths = {p.stem: p for p in list_images(test_dir)}
+    shapes = {}
+
+    def read(path):
+        out = defaultdict(list)
+        with Path(path).open() as handle:
+            for row in _csv.DictReader(handle):
+                stem = row["filament_id"].rsplit("_", 1)[0]
+                if stem not in shapes:
+                    shapes[stem] = cv2.imread(str(paths[stem]), cv2.IMREAD_GRAYSCALE).shape
+                out[stem].append({"size": list(shapes[stem]), "counts": row["segmentation_rle"].encode("ascii")})
+        return out
+
+    ref, other = read(reference_csv), read(other_csv)
+    rows, dices = [], []
+    for stem in sorted(set(ref) | set(other)):
+        a, b = ref.get(stem, []), other.get(stem, [])
+        rows.append(count_matches(a, b))
+        area_a = float(coco.area(coco.merge(a))) if a else 0.0
+        area_b = float(coco.area(coco.merge(b))) if b else 0.0
+        if area_a + area_b == 0:
+            continue
+        inter = float(coco.area(coco.merge([coco.merge(a), coco.merge(b)], intersect=True))) if a and b else 0.0
+        dices.append(2 * inter / (area_a + area_b))
+    summary = aggregate(rows)
+    return {"reference_instances": sum(map(len, ref.values())), "other_instances": sum(map(len, other.values())),
+            "images_compared": len(rows), "matched_pq": summary["pq"], "tp": summary["tp"], "fp": summary["fp"],
+            "fn": summary["fn"], "mean_pixel_dice": float(np.mean(dices)) if dices else 1.0}
 
 
 def summary_table(metrics: dict) -> str:
