@@ -15,6 +15,7 @@ Design choices
 * Hysteresis threshold, minimum area and limb erosion are tuned on the calibration
   subset only. The validation partition is evaluated once, at the end.
 """
+import copy
 import csv
 import hashlib
 import json
@@ -29,6 +30,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from pycocotools import mask as coco
+from scipy import ndimage
 
 from .core import aggregate, encode_instances, ground_truth, load_annotations, score_masks
 
@@ -52,6 +54,8 @@ class TrainConfig:
     eval_every: int = 5              # epochs between quick tuning-set PQ checks
     eval_images: int = 40            # tuning images used for those quick checks
     seed: int = 2026
+    encoder: str = "resnet34"        # see ENCODERS
+    ema_decay: float = 0.0           # >0 keeps an exponential moving average of the weights
 
 
 @dataclass
@@ -64,6 +68,8 @@ class PostConfig:
     max_area: int = 150000
     disk_erode: int = 10    # pixels removed from the solar limb
     closing_radius: int = 0
+    group_dist: int = 0     # >0 merges fragments closer than about 2*group_dist px into one filament
+    fill_holes: bool = False
 
 
 def seed_everything(seed: int) -> None:
@@ -211,33 +217,45 @@ class UpBlock(nn.Module):
         return self.conv(torch.cat([x, skip], dim=1))
 
 
+# name -> (torchvision builder, weights enum, channels of stem, layer1, layer2, layer3, layer4)
+ENCODERS = {
+    "resnet34": ("resnet34", "ResNet34_Weights", (64, 64, 128, 256, 512)),
+    "resnet50": ("resnet50", "ResNet50_Weights", (64, 256, 512, 1024, 2048)),
+    "resnext50": ("resnext50_32x4d", "ResNeXt50_32X4D_Weights", (64, 256, 512, 1024, 2048)),
+}
+
+
 class FilamentUNet(nn.Module):
-    """ResNet34 encoder, U-Net decoder, and a shallow branch at full input resolution.
+    """ResNet encoder, U-Net decoder, and a shallow branch at full input resolution.
 
     The ResNet stem halves the resolution immediately, which blurs thin barbs; the extra
-    full-resolution branch gives the head direct access to the raw pixels.
+    full-resolution branch gives the head direct access to the raw pixels. With the default
+    ``encoder="resnet34"`` the layer names and shapes are those of the v1 model, so v1
+    checkpoints load unchanged.
     """
 
-    def __init__(self, pretrained: bool = True):
+    def __init__(self, pretrained: bool = True, encoder: str = "resnet34"):
         super().__init__()
         import torchvision
 
-        weights = torchvision.models.ResNet34_Weights.IMAGENET1K_V1 if pretrained else None
+        builder_name, weights_name, (c0, c1, c2, c3, c4) = ENCODERS[encoder]
+        builder = getattr(torchvision.models, builder_name)
+        weights = getattr(torchvision.models, weights_name).DEFAULT if pretrained else None
         try:
-            net = torchvision.models.resnet34(weights=weights)
+            net = builder(weights=weights)
         except Exception as error:  # offline sessions cannot download the weights
             print(f"Pretrained weights unavailable ({type(error).__name__}); using random init.")
-            net = torchvision.models.resnet34(weights=None)
+            net = builder(weights=None)
         conv1 = nn.Conv2d(1, 64, 7, stride=2, padding=3, bias=False)
         with torch.no_grad():
             conv1.weight.copy_(net.conv1.weight.sum(dim=1, keepdim=True))
         self.stem = nn.Sequential(conv1, net.bn1, net.relu)
         self.pool = net.maxpool
         self.layer1, self.layer2, self.layer3, self.layer4 = net.layer1, net.layer2, net.layer3, net.layer4
-        self.up4 = UpBlock(512, 256, 256)
-        self.up3 = UpBlock(256, 128, 128)
-        self.up2 = UpBlock(128, 64, 64)
-        self.up1 = UpBlock(64, 64, 64)
+        self.up4 = UpBlock(c4, c3, 256)
+        self.up3 = UpBlock(256, c2, 128)
+        self.up2 = UpBlock(128, c1, 64)
+        self.up1 = UpBlock(64, c0, 64)
         self.full = nn.Sequential(
             nn.Conv2d(1, 16, 3, padding=1, bias=False), nn.BatchNorm2d(16), nn.ReLU(inplace=True),
             nn.Conv2d(16, 16, 3, padding=1, bias=False), nn.BatchNorm2d(16), nn.ReLU(inplace=True),
@@ -298,25 +316,54 @@ def predict_proba(model: nn.Module, img: np.ndarray, device: torch.device, cfg: 
     return (total / len(flips))[0, 0].cpu().numpy().astype(np.float16)
 
 
+def fill_holes(binary: np.ndarray) -> np.ndarray:
+    """Fill background regions not 4-connected to the border (= scipy binary_fill_holes), fast."""
+    height, width = binary.shape
+    flood = np.zeros((height + 2, width + 2), np.uint8)
+    flood[1:-1, 1:-1] = binary > 0
+    cv2.floodFill(flood, np.zeros((height + 4, width + 4), np.uint8), (0, 0), 1, flags=4)
+    return ((binary > 0) | (flood[1:-1, 1:-1] == 0)).astype(np.uint8)
+
+
 def segment(prob: np.ndarray, disk: np.ndarray, post: PostConfig):
-    """Probability map -> (label image, accepted labels), the format encode_instances expects."""
+    """Probability map -> (label image, accepted labels), the format encode_instances expects.
+
+    Steps: threshold at ``low`` inside the (eroded) solar disk, optionally fill holes and
+    close, label 8-connected regions, optionally merge regions closer than ~2*group_dist px
+    (one filament is often annotated as several disjoint pieces), then keep instances whose
+    area is in range and whose peak probability reaches ``high``. With ``group_dist=0`` and
+    ``fill_holes=False`` this is exactly the v1 rule.
+    """
     binary = ((prob > post.low) & (erode_disk(disk, post.disk_erode) > 0)).astype(np.uint8)
+    if post.fill_holes:
+        binary = fill_holes(binary)
     if post.closing_radius:
         size = post.closing_radius * 2 + 1
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (size, size))
         binary = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
-    count, labels, stats, _ = cv2.connectedComponentsWithStats(binary, 8)
-    accepted = []
-    for label in range(1, count):
-        x, y, w, h, area = stats[label]
-        if area < post.min_area or area > post.max_area:
-            continue
-        if post.high > post.low:
-            inside = labels[y:y + h, x:x + w] == label
-            if float(prob[y:y + h, x:x + w][inside].max()) < post.high:
-                continue
-        accepted.append(label)
-    return labels, accepted
+    count, labels = cv2.connectedComponents(binary, connectivity=8, ltype=cv2.CV_32S)
+    if post.group_dist > 0 and count > 2:
+        size = 2 * post.group_dist + 1
+        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (size, size))
+        count, grouped = cv2.connectedComponents(cv2.dilate(binary, kernel), connectivity=8, ltype=cv2.CV_32S)
+        labels = np.where(binary > 0, grouped, 0).astype(np.int32)
+    if count <= 1:
+        return labels, []
+    index = np.arange(1, count)
+    areas = np.bincount(labels.ravel(), minlength=count)[1:]
+    keep = (areas >= post.min_area) & (areas <= post.max_area)
+    if post.high > post.low and keep.any():
+        peaks = np.asarray(ndimage.maximum(prob.astype(np.float32), labels, index[keep]))
+        keep[np.flatnonzero(keep)] = peaks >= post.high
+    return labels, index[keep].tolist()
+
+
+def encode_instances_fast(labels: np.ndarray, accepted: list) -> list:
+    """Same RLEs as core.encode_instances, but reorders the label image to Fortran order once."""
+    if not accepted:
+        return []
+    fortran = np.asfortranarray(labels)
+    return [coco.encode((fortran == label).astype(np.uint8)) for label in accepted]
 
 
 # --------------------------------------------------------------------------- evaluation
@@ -382,10 +429,40 @@ def tune_post(cases: list, probs: dict, start: PostConfig, log=print) -> PostCon
 
 
 # --------------------------------------------------------------------------- training
+class ModelEMA:
+    """Exponential moving average of all weights and BatchNorm statistics.
+
+    The decay ramps up as (1 + step) / (10 + step) so early, random weights fade quickly.
+    """
+
+    def __init__(self, model: nn.Module, decay: float):
+        self.decay, self.steps = decay, 0
+        self.shadow = {k: v.detach().clone().float() if v.dtype.is_floating_point else v.detach().clone()
+                       for k, v in model.state_dict().items()}
+
+    @torch.no_grad()
+    def update(self, model: nn.Module) -> None:
+        self.steps += 1
+        decay = min(self.decay, (1 + self.steps) / (10 + self.steps))
+        for key, value in model.state_dict().items():
+            if value.dtype.is_floating_point:
+                self.shadow[key].mul_(decay).add_(value.detach().float(), alpha=1.0 - decay)
+            else:
+                self.shadow[key].copy_(value)
+
+    def state_dict(self) -> dict:
+        return {k: v.clone() for k, v in self.shadow.items()}
+
+
 def train_model(model, train_cases, tune_cases, cfg: TrainConfig, device, out_dir, log=print) -> list:
-    """Train with BCE+Dice, keep the checkpoint with the best quick tuning-set PQ."""
+    """Train with BCE+Dice, keep the checkpoint with the best quick tuning-set PQ.
+
+    With ``cfg.ema_decay > 0`` the moving-average weights are the ones evaluated and saved.
+    """
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    ema = ModelEMA(model, cfg.ema_decay) if cfg.ema_decay > 0 else None
+    eval_model = copy.deepcopy(model) if ema else model
     use_amp = cfg.amp and device.type == "cuda"
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg.lr, weight_decay=cfg.weight_decay)
     scheduler = torch.optim.lr_scheduler.OneCycleLR(
@@ -413,19 +490,24 @@ def train_model(model, train_cases, tune_cases, cfg: TrainConfig, device, out_di
             scaler.step(optimizer)
             scaler.update()
             scheduler.step()
+            if ema:
+                ema.update(model)
             losses.append(float(loss.detach()))
         record = {"epoch": epoch + 1, "loss": float(np.mean(losses)), "seconds": time.time() - start}
         if (epoch + 1) % cfg.eval_every == 0 or epoch + 1 == cfg.epochs:
-            probs = {c["name"]: predict_proba(model, c["image"], device, cfg, tta=False) for c in eval_cases}
+            if ema:
+                eval_model.load_state_dict(ema.state_dict())
+            probs = {c["name"]: predict_proba(eval_model, c["image"], device, cfg, tta=False) for c in eval_cases}
             record["tune_pq"] = aggregate(evaluate_probs(eval_cases, probs, PostConfig()))["pq"]
             if record["tune_pq"] > best_pq:
                 best_pq = record["tune_pq"]
-                torch.save(model.state_dict(), out_dir / "best.pt")
+                torch.save(eval_model.state_dict(), out_dir / "best.pt")
         history.append(record)
         log(record)
-    torch.save(model.state_dict(), out_dir / "last.pt")
+    final = ema.state_dict() if ema else model.state_dict()
+    torch.save(final, out_dir / "last.pt")
     if not (out_dir / "best.pt").exists():
-        torch.save(model.state_dict(), out_dir / "best.pt")
+        torch.save(final, out_dir / "best.pt")
     return history
 
 
@@ -521,7 +603,7 @@ def run_experiment(data_dir, split: dict, out_dir, cfg=None, debug: bool = False
     train_cases = load_cases(data_dir, train_names, records, annotations, log)
     tune_cases = load_cases(data_dir, tune_names, records, annotations, log)
 
-    model = FilamentUNet(cfg.pretrained).to(device)
+    model = FilamentUNet(cfg.pretrained, cfg.encoder).to(device)
     history = train_model(model, train_cases, tune_cases, cfg, device, out_dir, log)
     del train_cases
     model.load_state_dict(torch.load(out_dir / "best.pt", map_location=device))
