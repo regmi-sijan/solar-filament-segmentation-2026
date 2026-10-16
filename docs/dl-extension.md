@@ -1,6 +1,7 @@
 # Deep-learning extension (GPU U-Net)
 
-Status: **implemented, smoke-tested on synthetic data, and run once end to end on the real competition data (see "First real-data run").**
+Status: **implemented, tested, and run on the real competition data: v1 (one ResNet34 U-Net, validation PQ 0.4111, public 0.33) and
+the v2 suite (ensembles, validation PQ 0.4271 for the candidate selected on calibration).**
 Treat any later PQ figure as valid only if it comes from the `metrics.json` of that run, not from this document.
 
 ## First real-data run (Kaggle, Tesla T4, ImageNet-pretrained ResNet34, `TrainConfig()` defaults, seed 2026)
@@ -24,6 +25,48 @@ Trained on 457 images, tuned on the 111 calibration images, validation (139 imag
   The files that persist are those of this second run (private notebook version, `run1/candidate_submission.csv`, `run1/best.pt`, `run1/metrics.json`).
 * Caveats: two runs, one seed; the bootstrap interval reflects capture-date resampling of the 139 validation images, not seed variance;
   the baseline's local validation PQ (0.1796) was 0.15 on the public leaderboard, so expect some local-to-leaderboard gap.
+* Public leaderboard: the repeat-run CSV was submitted once as an exploratory (non-final) submission and scored **0.33**.
+
+## Experiment suite v2 (Kaggle, T4 x2, `notebooks/gpu-experiments-v2.ipynb`, 2 h 45 min)
+
+Same partitions and rules: every model trains on the 457 training-minus-calibration images; checkpoint, post-processing and
+the choice between candidates use the 111 calibration images only; each candidate is then scored once on validation
+(139 images, 222 annotator sets). Code: `filament/suite.py`; private Kaggle notebook `notebooke5e77a5780`, version 1.
+
+| Candidate | Calibration PQ | Validation PQ (95% CI) | TP / FP / FN | Val. PQ without grouping |
+|---|---|---|---|---|
+| **Ensemble ResNet34-768 + ResNet50-768 (selected on calibration)** | **0.4240** | **0.4271 (0.4053 to 0.4466)** | 1033 / 689 / 525 | 0.4226 |
+| Ensemble of both + v1 | 0.4224 | 0.4247 (0.4037 to 0.4448) | 996 / 626 / 562 | 0.4215 |
+| ResNet50 U-Net, 768 px crops, EMA | 0.4196 | 0.4295 (0.4088 to 0.4489) | 1020 / 644 / 538 | 0.4238 |
+| ResNet34 U-Net, 768 px crops, EMA | 0.4166 | 0.4208 (0.4006 to 0.4405) | 1015 / 674 / 543 | 0.4124 |
+| v1 checkpoint, re-tuned | 0.4070 | 0.4163 (0.3953 to 0.4362) | 1014 / 704 / 544 | 0.4090 |
+
+* Selected candidate (highest calibration PQ): the two-model ensemble, post-processing `low=0.6, high=0.9, min_area=300,
+  disk_erode=10, group_dist=4, fill_holes=False`. Validation PQ 0.4271 vs 0.4111 for the v1 CSV that scored 0.33 publicly.
+  ResNet50 alone scored slightly higher on validation (0.4295) but lower on calibration; the difference is within noise, and
+  choosing it after seeing validation would leak.
+* Every new candidate beats v1 under identical scoring; the gain is modest (+0.01 to +0.02 PQ) and the confidence intervals overlap.
+* Instance grouping (merging fragments within ~2*group_dist px) adds about +0.005 PQ; the tuned thresholds are more conservative
+  than v1's (low 0.6 to 0.7, high 0.85 to 0.95), trading a few true positives for fewer false positives.
+* Candidate CSVs (all verified, none uploaded by the code) are in the notebook output under `v2/candidates/<candidate>/submission.csv`;
+  sha256 prefixes: selected ensemble `392c9f61f9410c1f` (1436 rows), ResNet50 `6c7e80b4c9cd806d` (1411 rows),
+  ResNet34 `fb92e53aca5745f1` (1394 rows), three-model ensemble `65f824e5d2dd508b` (1353 rows), v1 re-tuned `749ba9591e320c23` (1449 rows).
+
+### Error analysis (from the same run)
+
+* **Annotators disagree a lot under this metric.** Scoring one annotator's filaments against another's (101 calibration and
+  validation images with two or more annotators) gives PQ **0.353**. All models above exceed that, because they predict the
+  annotators' consensus, which is the best single answer when every annotator set is scored separately.
+* Using the consensus mask itself as the prediction reaches PQ 0.78 on calibration (an upper reference, inflated by
+  single-annotator images, where the consensus is the answer).
+* Ground-truth filaments are single polygons (0 of 8199 annotations have several) and 0.3% have disconnected parts, so large
+  grouping distances hurt (consensus PQ 0.78 -> 0.68 at 32 px); small distances help predictions whose filaments break up.
+
+### Next step if this configuration is adopted
+
+`filament.suite.run_refit` retrains the selected models on all 707 labelled images (training + validation), reuses the
+calibration-tuned post-processing, and writes one CSV. No held-out data remains, so the quality estimate stays the
+validation figure above.
 
 ## What changed relative to the classical baseline
 
