@@ -438,6 +438,48 @@ def run_suite(data_dir, split: dict, out_dir, suite: dict, debug: bool = False, 
     return metrics
 
 
+def run_refit(data_dir, split: dict, out_dir, models: list, post: dict, external=None, debug: bool = False,
+              probs_root=None, workers=None, log=_log) -> dict:
+    """Retrain ``models`` on every labelled image (training + validation) and write one test CSV.
+
+    Use this only after a suite run has chosen the configuration and ``post`` on calibration data.
+    There is no held-out data left, so the checkpoint is the final (EMA) weights and the reported
+    estimate of quality remains the suite's validation score. Nothing is submitted to Kaggle.
+    """
+    cv2.setNumThreads(1)
+    data_dir, out_dir = Path(data_dir), Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    work = out_dir / "work"
+    work.mkdir(exist_ok=True)
+    probs_dir = Path(probs_root or "/tmp/filament_probs") / out_dir.name
+    workers = workers or max(1, min(4, os.cpu_count() or 1))
+    external = list(external or [])
+    train_names = list(split["training"]) + list(split["validation"])
+    test_paths = list_images(data_dir / "test/test_images")
+    if debug:
+        train_names, test_paths = train_names[:6], test_paths[:4]
+    log(f"refit: train={len(train_names)} test={len(test_paths)} models={[m['name'] for m in models]} "
+        f"external={[e['name'] for e in external]} post={post}")
+    t0 = time.time()
+    _wait(_launch("train", models, {"data": str(data_dir), "out": str(out_dir / "models"),
+                                    "train_names": train_names, "tune_names": []}, work))
+    infer_models = [{"name": m["name"], "encoder": m["cfg"]["encoder"], "cost": m.get("cost", 1.0),
+                     "weights": str(out_dir / "models" / m["name"] / "last.pt")} for m in models] + external
+    _wait(_launch("infer", infer_models, {"probs": str(probs_dir), "tta": True,
+                                          "images": {p.stem: str(p) for p in test_paths}}, work))
+    members = [m["name"] for m in infer_models]
+    csv_path = out_dir / "submission.csv"
+    write_candidate_csv(test_paths, members, probs_dir, PostConfig(**post), csv_path, workers)
+    verification = verify_submission(csv_path, data_dir / "test/test_images")
+    metrics = {"members": members, "post": post, "train_images": len(train_names), "csv": verification,
+               "histories": {m["name"]: json.loads((out_dir / "models" / m["name"] / "history.json").read_text())
+                             for m in models},
+               "minutes": (time.time() - t0) / 60, "debug": debug}
+    (out_dir / "refit_metrics.json").write_text(json.dumps(metrics, indent=2))
+    log(f"refit done: {verification}")
+    return metrics
+
+
 def summary_table(metrics: dict) -> str:
     lines = [f"{'candidate':42s} {'calib PQ':>9s} {'val PQ':>8s} {'95% CI':>17s} {'TP/FP/FN':>16s} {'no-group':>9s}"]
     for cand, r in sorted(metrics["candidates"].items(), key=lambda kv: -kv[1]["calibration_pq"]):

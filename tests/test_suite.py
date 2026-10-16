@@ -127,6 +127,24 @@ class SuiteTests(unittest.TestCase):
             self.assertTrue(json.loads((out / "suite_metrics.json").read_text())["debug"])
             self.assertIn("selected", summary_table(metrics))
 
+    def test_debug_refit_trains_on_all_labelled_images_and_writes_a_valid_csv(self):
+        from filament.suite import run_refit
+        with tempfile.TemporaryDirectory() as tmp:
+            data, out = Path(tmp, "data"), Path(tmp, "out")
+            split = make_synthetic_dataset(data, n_train=12, n_test=3, size=128)
+            v1 = Path(tmp, "v1_best.pt")
+            torch.save(FilamentUNet(pretrained=False).state_dict(), v1)
+            suite = default_suite(v1, debug=True)
+            post = {"low": 0.5, "high": 0.5, "min_area": 10, "max_area": 150000, "disk_erode": 0,
+                    "closing_radius": 0, "group_dist": 0, "fill_holes": False}
+            metrics = run_refit(data, split, out, suite["models"][:1], post, external=suite["external"],
+                                debug=True, probs_root=Path(tmp, "probs"), workers=2, log=lambda *_: None)
+            self.assertEqual(metrics["csv"]["status"], "passed")
+            self.assertEqual(len(metrics["members"]), 2)
+            history = metrics["histories"]["r34_c768_ema"]["history"]
+            self.assertTrue(all("tune_pq" not in r for r in history), "no calibration data in a refit")
+            self.assertTrue((out / "models" / "r34_c768_ema" / "best.pt").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

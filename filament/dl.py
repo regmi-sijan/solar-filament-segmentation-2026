@@ -494,7 +494,7 @@ def train_model(model, train_cases, tune_cases, cfg: TrainConfig, device, out_di
                 ema.update(model)
             losses.append(float(loss.detach()))
         record = {"epoch": epoch + 1, "loss": float(np.mean(losses)), "seconds": time.time() - start}
-        if (epoch + 1) % cfg.eval_every == 0 or epoch + 1 == cfg.epochs:
+        if eval_cases and ((epoch + 1) % cfg.eval_every == 0 or epoch + 1 == cfg.epochs):
             if ema:
                 eval_model.load_state_dict(ema.state_dict())
             probs = {c["name"]: predict_proba(eval_model, c["image"], device, cfg, tta=False) for c in eval_cases}
