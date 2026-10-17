@@ -1,7 +1,8 @@
 # Deep-learning extension (GPU U-Net)
 
 Status: **implemented, tested, and run on the real competition data: v1 (one ResNet34 U-Net, validation PQ 0.4111, public 0.33) and
-the v2 suite (ensembles, validation PQ 0.4271 for the candidate selected on calibration).**
+the v2 suite (ensembles, validation PQ 0.4271 for the candidate selected on calibration, public 0.35), and its refit on all
+707 labelled images (public 0.36).**
 Treat any later PQ figure as valid only if it comes from the `metrics.json` of that run, not from this document.
 
 ## First real-data run (Kaggle, Tesla T4, ImageNet-pretrained ResNet34, `TrainConfig()` defaults, seed 2026)
@@ -77,6 +78,9 @@ final EMA weights. Private Kaggle notebook `notebookf479dfb0f6`, version 1; CSV 
   extra data shifts the decision.
 * No held-out data remains, so there is no new validation score; the estimate of quality stays the v2 validation PQ
   (0.4271). Whether the extra data helps can only be read from the public leaderboard (v2 ensemble: 0.35).
+* Public leaderboard: the refit CSV was submitted once as an exploratory (non-final) submission and scored **0.36**
+  (v2 ensemble: 0.35, v1: 0.33, classical baseline: 0.15). Kaggle shows two decimals and the public split is only part of
+  the 180 test images, so +0.01 is consistent with a small gain from the extra data but is not conclusive on its own.
 
 ## What changed relative to the classical baseline
 
