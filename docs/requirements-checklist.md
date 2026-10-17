@@ -23,3 +23,10 @@ Sources:
 - https://www.kaggle.com/code/azimahmadzadeh/self-evaluation-notebook
 - https://www.overleaf.com/read/vjztpvrnbrdh#43fbbe
 - https://docs.google.com/forms/d/e/1FAIpQLSfyrM4dhc8QzxR90PtF6fb018KPf0S0Cbf5hPqMuUognmzQsA/viewform
+
+## Update, October 17, 2026
+
+- Final entry changed to the GPU ensemble refit on 707 images (public 0.36); final selections on Kaggle: refit (0.36) and the 457-image ensemble (0.35). The baseline is no longer selected.
+- Report: `report/main_gpu.pdf` (acmart sigconf, 3 pages including references, pretrained ImageNet weights disclosed; rules allow free, publicly available pretrained models).
+- Form: re-filed by the participant with the new CSV, report and the branch URL `.../tree/gpu-unet-extension`. The earlier September 23 filing is superseded.
+- Public Kaggle code sharing: the baseline notebook is public; the GPU notebooks are private.

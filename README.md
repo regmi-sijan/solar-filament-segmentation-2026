@@ -4,11 +4,13 @@ A reproducible native-resolution, CPU-based instance-segmentation baseline by Si
 
 ## Submission status
 
-Kaggle accepted `results/submission.csv` on September 23, 2026 and displayed public score **0.15**. It is selected for final scoring. Local held-out PQ is a separate measurement. See `docs/submission-status.json` for the external submission record.
+**Current final entry (October 17, 2026):** a ResNet34 + ResNet50 U-Net ensemble retrained on all 707 labelled images (branch `gpu-unet-extension`; see `docs/dl-extension.md` and `report/main_gpu.pdf`). Its CSV (`refit/submission.csv` in the Kaggle notebook output, SHA-256 `0fe19db5f1614a6a2c6bea66ab7a6462418b9053c06f530bd85cee8939072509`) scored **0.36** on the public leaderboard. Validation PQ of the same ensemble trained on 457 images is 0.4271; the refit has no held-out score. Final selections on Kaggle: this refit (0.36) and the 457-image ensemble (0.35). The organizers' form was re-filed with this CSV and report on October 17, 2026.
+
+Earlier entry: the classical baseline below (`results/submission.csv`) was accepted on September 23, 2026 with public score **0.15** and is no longer selected. Local held-out PQ is a separate measurement. See `docs/submission-status.json` for the external submission records.
 
 Public source: https://github.com/regmi-sijan/solar-filament-segmentation-2026
 
-Public Kaggle notebook: https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible. Version 1 ran successfully on free CPU and reproduced the accepted CSV byte-for-byte (SHA-256 `65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab`). The organizers’ final form was submitted and confirmed on September 23, 2026.
+Public Kaggle notebook: https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible. Version 1 ran successfully on free CPU and reproduced the accepted CSV byte-for-byte (SHA-256 `65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab`). The organizers’ form was first submitted on September 23, 2026 with the baseline and re-filed on October 17, 2026 with the GPU ensemble.
 
 `notebooks/kaggle-inference.ipynb` is a self-contained inference notebook for Kaggle with the competition data attached; the full calibration and evaluation notebook is `notebooks/competition-pipeline.ipynb`.
 
