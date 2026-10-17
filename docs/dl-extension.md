@@ -117,6 +117,13 @@ Local: `python -m filament.run_dl --data MAGFiLO_1.0_Kaggle_2026 --out results/d
 Outputs: `metrics.json`, `candidate_submission.csv`, `best.pt`, `validation_rows.json`, `inference_manifest.json`.
 `candidate_submission.csv` is never uploaded by the code.
 
+## Draft report for the GPU entry
+
+`report/main_gpu.tex` (PDF: `report/main_gpu.pdf`, 3 pages including references) describes the final system: the ResNet34 + ResNet50
+ensemble refit on 707 images, the ImageNet-weights disclosure, validation 0.4271, and public scores 0.15 / 0.33 / 0.35 / 0.36.
+Figures: `python scripts/make_gpu_figures.py`. Build: `cd report && latexmk -pdf main_gpu.tex`. The filed classical report
+(`report/main.tex`, `report/main.pdf`) is unchanged. Nothing has been re-filed with the organizers yet.
+
 ## Adopting it for the final entry
 
 If the held-out PQ clearly beats 0.1796 (compare the bootstrap intervals, not just the point estimates):
