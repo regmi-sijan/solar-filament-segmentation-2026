@@ -64,11 +64,19 @@ the choice between candidates use the 111 calibration images only; each candidat
 * Ground-truth filaments are single polygons (0 of 8199 annotations have several) and 0.3% have disconnected parts, so large
   grouping distances hurt (consensus PQ 0.78 -> 0.68 at 32 px); small distances help predictions whose filaments break up.
 
-### Next step if this configuration is adopted
+### Refit on all 707 labelled images (Kaggle, T4 x2, `notebooks/gpu-refit-707.ipynb`, 83 min)
 
-`filament.suite.run_refit` retrains the selected models on all 707 labelled images (training + validation), reuses the
-calibration-tuned post-processing, and writes one CSV. No held-out data remains, so the quality estimate stays the
-validation figure above.
+The selected ensemble was retrained on every labelled image (training + validation = 707 instead of 457) with the exact
+v2 settings and seeds, the calibration-tuned post-processing read from the v2 `suite_metrics.json` (not re-tuned), and the
+final EMA weights. Private Kaggle notebook `notebookf479dfb0f6`, version 1; CSV at `refit/submission.csv`.
+
+* CSV verified: 1459 rows, 180 test images, 178 with predictions; sha256
+  `0fe19db5f1614a6a2c6bea66ab7a6462418b9053c06f530bd85cee8939072509`. Not uploaded by the code.
+* Sanity check against the validated v2 ensemble on the test images (no labels): matched PQ 0.884 (TP / FP / FN
+  1367 / 92 / 69), mean pixel Dice 0.956. The refit predicts nearly the same filaments, with small changes where the
+  extra data shifts the decision.
+* No held-out data remains, so there is no new validation score; the estimate of quality stays the v2 validation PQ
+  (0.4271). Whether the extra data helps can only be read from the public leaderboard (v2 ensemble: 0.35).
 
 ## What changed relative to the classical baseline
 
