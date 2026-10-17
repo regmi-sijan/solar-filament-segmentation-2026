@@ -11,8 +11,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 5489,
-    "sha256": "bd779928fab79d4bb61ea5e655bf21de50edfd0c6a66a74e1407f40aa904cb99"
+    "bytes": 6223,
+    "sha256": "66451048db129ff35bae7cb90abd44764d94f43d3eaae43a14e9f922851c2a14"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
@@ -50,19 +50,24 @@
     "sha256": "ce13f49116e167ce6d41df1043910782543ba8a2c6398b4437d510e428355623"
   },
   {
+    "path": "docs/dl-extension.md",
+    "bytes": 10911,
+    "sha256": "f138ab0883d6aae49b3a5fb0e9ea40d18ca779c66980f3901c7eaecc8285334d"
+  },
+  {
     "path": "docs/method-walkthrough.md",
     "bytes": 3513,
     "sha256": "d9a8cccf116c77e47c40f9615ff94e6e3a2ac363bccac306a0e9599d5c02f936"
   },
   {
     "path": "docs/requirements-checklist.md",
-    "bytes": 2713,
-    "sha256": "d232e02f1956a12bc011a196ef1c0f9b5303776a617de3f1f818c13e78439e52"
+    "bytes": 3432,
+    "sha256": "f1e3f09b980381e2d8ecb96c48264aaf1a252197b8613b1cc3a6d863f4692ac3"
   },
   {
     "path": "docs/submission-status.json",
-    "bytes": 1050,
-    "sha256": "1637e5f8ac270b80fdf08e174929d30bb07c7b4bc6efdebf9cd83e3e264da5af"
+    "bytes": 1999,
+    "sha256": "492fc27492b6bfc534b5c6050754157b7adf73dcc6633e332403fbe4341309bc"
   },
   {
     "path": "filament/__init__.py",
@@ -75,14 +80,49 @@
     "sha256": "98ed1fa2332ed21f40fb7c9f914a9d60e8ada8f8f0c612a3e045434fcd41a19a"
   },
   {
+    "path": "filament/dl.py",
+    "bytes": 29893,
+    "sha256": "b97abe85d87ec48694820bce9628c8d62aae872197c8a86588a8d7cbabe2c796"
+  },
+  {
     "path": "filament/run.py",
     "bytes": 7964,
     "sha256": "3ef3d5070867585121582dd76d1305008ade537ae5698b66ca4f879ba5bedfb6"
   },
   {
+    "path": "filament/run_dl.py",
+    "bytes": 1786,
+    "sha256": "5862442c50c202a9dc2002d637da828051cc6892b5b3933af67e6f81da4cb492"
+  },
+  {
+    "path": "filament/suite.py",
+    "bytes": 26178,
+    "sha256": "176b2ef4328b4a0b86971c70041a7a5bb6460ab072136bbd5f2dc7a42e6e2f40"
+  },
+  {
+    "path": "filament/synthetic.py",
+    "bytes": 4075,
+    "sha256": "82d9b9e939b74ec619451e6571cb35d02acc87488655237230facd32d5f76928"
+  },
+  {
     "path": "notebooks/competition-pipeline.ipynb",
     "bytes": 498833,
     "sha256": "bf1fa174d2dc770cc2c34c4be701834736260f0df777f5126f65b50afe6acf9d"
+  },
+  {
+    "path": "notebooks/gpu-experiments-v2.ipynb",
+    "bytes": 95515,
+    "sha256": "be3eb10a1a6ece7f098b67dc465f37b5de1bc0934c8c459cbb3ba92ca8388d6e"
+  },
+  {
+    "path": "notebooks/gpu-refit-707.ipynb",
+    "bytes": 101921,
+    "sha256": "fd085344153f4bfb978347f207d8540a5b5ebf4a921acf5925f85c6f61b0b84d"
+  },
+  {
+    "path": "notebooks/gpu-unet-training.ipynb",
+    "bytes": 63437,
+    "sha256": "a1765532618582dde5c28fab5cb6472e3adec7ce060cd76c604a06445b10df51"
   },
   {
     "path": "notebooks/kaggle-inference.ipynb",
@@ -100,6 +140,16 @@
     "sha256": "920ec93703e65a78b3174ddd6930e595ea5fc98202904ba5e6a8d09091114929"
   },
   {
+    "path": "report/figures/gpu_pipeline.pdf",
+    "bytes": 17384,
+    "sha256": "324a6799f5966b8d0c7e5683845cc79ebf256f936850b9210aafd309a17b0ac5"
+  },
+  {
+    "path": "report/figures/gpu_validation.pdf",
+    "bytes": 16142,
+    "sha256": "4bd677386521389538faff8f781aa7250be51e22e797000add5a4556d641caf1"
+  },
+  {
     "path": "report/figures/metrics.pdf",
     "bytes": 18736,
     "sha256": "304c94c3dcee914872c0375cc965c076a01b5fce979221380b7af5b373c67d57"
@@ -113,6 +163,11 @@
     "path": "report/figures/pipeline.pdf",
     "bytes": 16186,
     "sha256": "28bfde51a026965f1aec617e132f2207dddff4b75ba118462295d97e19f6c688"
+  },
+  {
+    "path": "report/gpu.bib",
+    "bytes": 1266,
+    "sha256": "e8ff47e517fdb4afbcef32188d996c74bffa1199d85137ba2b1886645f1b3507"
   },
   {
     "path": "report/main.bib",
@@ -130,19 +185,29 @@
     "sha256": "37126d9309f5d1e577e87be4a184befdced1772b0f62557f48a2286bcd9742e1"
   },
   {
+    "path": "report/main_gpu.pdf",
+    "bytes": 457499,
+    "sha256": "6c4cccfd63819492a070263c9c7684fc4b0be2b7c3012bb1fb3665491d1c1d75"
+  },
+  {
+    "path": "report/main_gpu.tex",
+    "bytes": 12970,
+    "sha256": "b8b51fcacfd48b8addf2379646e5fa3c557f86ccc94a47227e43664d808d1067"
+  },
+  {
     "path": "report/preamble.tex",
     "bytes": 585,
     "sha256": "00cf82785f650e3e6ffe84da31603692e0cb725d02dc8d3e19778a4cfd629c93"
   },
   {
     "path": "requirements-lock.txt",
-    "bytes": 1154,
-    "sha256": "8bffc7557c827fd984c337ca8de3ff752934077498759ecf28edf912b2ce0f91"
+    "bytes": 1174,
+    "sha256": "02401f3c5a6a6f8d4c0ad07b07c4b4e11478d604d9a0106d650552505b598258"
   },
   {
     "path": "requirements.txt",
-    "bytes": 193,
-    "sha256": "794f96c4b0c32dd1541d98b5f822c7490ed62fac7a551fd69376c9eb5858d885"
+    "bytes": 213,
+    "sha256": "356d3768ba09a403ffa2934f82f5790341a4414ba2d6c4da503d0ee46efeb5cf"
   },
   {
     "path": "results/calibration-initial.json",
@@ -180,6 +245,21 @@
     "sha256": "b201f612d6cbdba06d540a8780165def112944b97a722e0db7b051d2c0ef471a"
   },
   {
+    "path": "scripts/create_gpu_notebook.py",
+    "bytes": 5487,
+    "sha256": "0fa0cb3d031351e882fdf12ad44ba251b249c0c2a5f69a3d97a56d673fe566d1"
+  },
+  {
+    "path": "scripts/create_gpu_notebook_refit.py",
+    "bytes": 6808,
+    "sha256": "0746c1eb3ebc78fb564f26d05f72594626cb4e6ab359b83fa679d78787f8b127"
+  },
+  {
+    "path": "scripts/create_gpu_notebook_v2.py",
+    "bytes": 6029,
+    "sha256": "d52329cade8d2370348305e05a0a75e06832f0897fd0497bd1b0ca9e87c2e4a1"
+  },
+  {
     "path": "scripts/create_notebook.py",
     "bytes": 5239,
     "sha256": "8cb30e89b72255cd92e5401fc1f296983ba295a1d9ea960a2b01bdaa1913d305"
@@ -200,13 +280,28 @@
     "sha256": "76b6e0fc072e28c227a3dffce187fce64228799b2d16268901ce27e97191a220"
   },
   {
+    "path": "scripts/make_gpu_figures.py",
+    "bytes": 2326,
+    "sha256": "d973b0749e9ec2cf3108fd45f6b8568eb6e6f335434496416f555465aec9b61a"
+  },
+  {
     "path": "scripts/package_release.py",
-    "bytes": 1910,
-    "sha256": "ba6e0553b17cc00f099f800653784e6849b5a95f82eb8e73b6a383a80ca8d78b"
+    "bytes": 2043,
+    "sha256": "24307a1b7e5f463b6eeff03d6176a1367583b545dd4395307f7ad0f3c84cbcaf"
+  },
+  {
+    "path": "tests/test_dl.py",
+    "bytes": 3040,
+    "sha256": "c0ffee491e0f7d2e3bef8f07ef4f86e66e7ed75202772178c42f25e9f2e437a6"
   },
   {
     "path": "tests/test_pipeline.py",
     "bytes": 3479,
     "sha256": "05f1475ff0100f93156bd174e9bbf84c2a611b7cedc62ef266426a9344608204"
+  },
+  {
+    "path": "tests/test_suite.py",
+    "bytes": 9551,
+    "sha256": "6db50f903a2c04cf59487054987f7dbfe174776ae858b535a08cd9b195097340"
   }
 ]
