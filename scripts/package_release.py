@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DEST=ROOT/'release';DEST.mkdir(exist_ok=True)
 allowed=['README.md','LICENSE','THIRD_PARTY_NOTICES.md','.gitignore','requirements.txt','requirements-lock.txt']
 for folder,patterns in {'filament':['*.py'],'configs':['*.json'],'tests':['*.py'],'scripts':['*.py'],
-                       'docs':['method-walkthrough.md','requirements-checklist.md','data-audit.json','dataset-verification.json','submission-status.json','dl-extension.md'],
+                       'docs':['method-walkthrough.md','requirements-checklist.md','data-audit.json','dataset-verification.json','submission-status.json','dl-extension.md','project-overview.pdf'],
                        'notebooks':['competition-pipeline.ipynb','kaggle-inference.ipynb','gpu-unet-training.ipynb','gpu-experiments-v2.ipynb','gpu-refit-707.ipynb','gpu-treesel.ipynb'],
                        'results':['calibration.json','calibration-initial.json','validation.json','submission.csv','submission-verification.json','inference-manifest.json'],
                        'report':['main.tex','preamble.tex','main.bib','main.pdf','main_gpu.tex','gpu.bib','main_gpu.pdf'],'report/figures':['*.pdf','*.png']}.items():
