@@ -136,3 +136,7 @@ The GPU ensemble refit on 707 images replaced the classical baseline as the fina
    (`.../tree/gpu-unet-extension`); the participant received Google's confirmation email.
 
 The trained weights are not stored in git; the notebooks `gpu-experiments-v2.ipynb` and `gpu-refit-707.ipynb` recreate them.
+
+## Tree-based candidate selection (October 17, 2026)
+
+`filament/treesel.py` builds a component tree over probability thresholds 0.10-0.80, scores each node with a gradient-boosted regressor of expected matched IoU, and picks the expected-PQ-maximizing antichain by dynamic programming (global offset tau chosen by out-of-fold cross-fitting on calibration). Validation PQ 0.4404 vs 0.4271 for the fixed rule. Public scores: 0.38 (707-image refit models, scorer applied to a shifted map distribution, unvalidated) and 0.37 (457-image models). Run with `notebooks/gpu-treesel.ipynb` (`scripts/create_gpu_notebook_treesel.py`); tests in `tests/test_treesel.py`.

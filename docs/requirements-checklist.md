@@ -26,7 +26,7 @@ Sources:
 
 ## Update, October 17, 2026
 
-- Final entry changed to the GPU ensemble refit on 707 images (public 0.36); final selections on Kaggle: refit (0.36) and the 457-image ensemble (0.35). The baseline is no longer selected.
-- Report: `report/main_gpu.pdf` (acmart sigconf, 3 pages including references, pretrained ImageNet weights disclosed; rules allow free, publicly available pretrained models).
-- Form: re-filed by the participant with the new CSV, report and the branch URL `.../tree/gpu-unet-extension`. The earlier September 23 filing is superseded.
+- Final entry changed to the tree-selection ensemble (public 0.38 with refit models, 0.37 with 457-image models); these are the Kaggle final selections. The baseline is no longer selected.
+- Report: `report/main_gpu.pdf` (acmart sigconf, 4 pages including references, pretrained ImageNet weights disclosed; rules allow free, publicly available pretrained models).
+- Form: to be re-filed by the participant with the 0.38 CSV and new report (earlier filing held the refit CSV, report and the branch URL `.../tree/gpu-unet-extension`. The earlier September 23 filing is superseded.
 - Public Kaggle code sharing: the baseline notebook is public; the GPU notebooks are private.

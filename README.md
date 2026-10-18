@@ -4,7 +4,7 @@ A reproducible native-resolution, CPU-based instance-segmentation baseline by Si
 
 ## Submission status
 
-**Current final entry (October 17, 2026):** a ResNet34 + ResNet50 U-Net ensemble retrained on all 707 labelled images (branch `gpu-unet-extension`; see `docs/dl-extension.md` and `report/main_gpu.pdf`). Its CSV (`refit/submission.csv` in the Kaggle notebook output, SHA-256 `0fe19db5f1614a6a2c6bea66ab7a6462418b9053c06f530bd85cee8939072509`) scored **0.36** on the public leaderboard. Validation PQ of the same ensemble trained on 457 images is 0.4271; the refit has no held-out score. Final selections on Kaggle: this refit (0.36) and the 457-image ensemble (0.35). The organizers' form was re-filed with this CSV and report on October 17, 2026.
+**Current final entry (October 17, 2026):** a ResNet34 + ResNet50 U-Net ensemble with learned component-tree candidate selection (`filament/treesel.py`; see `docs/dl-extension.md` and `report/main_gpu.pdf`). The version using the 707-image refit models scored **0.38** public (CSV SHA-256 prefix `2a01f6e0`); the version using the 457-image models scored **0.37**. Validation PQ of the tree selection is 0.4404 vs 0.4271 for the fixed rule. Final selections on Kaggle: these two. The organizers' form still holds the earlier refit CSV until the participant re-files it.
 
 Earlier entry: the classical baseline below (`results/submission.csv`) was accepted on September 23, 2026 with public score **0.15** and is no longer selected. Local held-out PQ is a separate measurement. See `docs/submission-status.json` for the external submission records.
 

@@ -29,21 +29,23 @@
   },
   "superseding_entry": {
     "recorded_at": "2026-10-17",
-    "description": "ResNet34+ResNet50 U-Net ensemble refit on all 707 labelled images (branch gpu-unet-extension)",
-    "kaggle_notebook": "notebookf479dfb0f6 (private), version \"Refit v2 ensemble on all 707 labelled images\"",
-    "file": "refit/submission.csv",
-    "rows": 1459,
-    "sha256": "0fe19db5f1614a6a2c6bea66ab7a6462418b9053c06f530bd85cee8939072509",
-    "public_score": 0.36,
+    "description": "ResNet34+ResNet50 U-Net ensemble with learned component-tree candidate selection (branch gpu-unet-extension)",
+    "kaggle_notebook": "notebook556361ae1c (private, copy of treesel outputs), v3 = refit tree CSV, v5 = held-out tree CSV; run notebook41c46ec4e4",
+    "file": "treesel/submission_refit_models.csv",
+    "rows": 1155,
+    "public_score": 0.38,
     "final_selections": [
-      "notebookf479dfb0f6 refit (0.36)",
-      "notebooke5e77a5780 v2 ensemble trained on 457 images (0.35)"
+      "refit models + tree selection (0.38, v3)",
+      "457-image models + tree selection (0.37, v5, sha256 prefix 8c900861)"
     ],
     "other_public_scores": {
+      "refit fixed rule": 0.36,
+      "v2 ensemble": 0.35,
       "v1 U-Net": 0.33,
       "classical baseline": 0.15
     },
-    "report": "report/main_gpu.pdf (3 pages, 457499 bytes)",
-    "organizers_form": "re-filed by the participant on 2026-10-17; Google confirmation email received (checked by the participant)"
+    "report": "report/main_gpu.pdf (4 pages)",
+    "organizers_form": "holds the earlier refit fixed-rule CSV and report; to be re-filed by the participant with the 0.38 CSV and new PDF",
+    "sha256_prefix": "2a01f6e0"
   }
 }
