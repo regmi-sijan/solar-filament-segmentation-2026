@@ -52,11 +52,11 @@ Public scores use about half of the test set and two decimals; the local-to-publ
 
 ## Submission status
 
-**Final entry (October 17, 2026):** V5, the tree-selection ensemble on the 707-image refit models (public **0.38**, CSV SHA-256 prefix `2a01f6e0`), with V4 (public **0.37**, prefix `8c900861`) as the second Kaggle final selection. Validation PQ of the tree selection is 0.4404 against 0.4271 for the fixed rule on the same maps. Leaderboard position when checked on October 17, 2026: about 230th of 1,054 teams. The report is `report/main_gpu.pdf` (4 pages). Records: `docs/submission-status.json`. AI assistance was used for implementation and documentation; the participant remains responsible for understanding and defending the method.
+**Final entry (verified November 13, 2026):** V5, the tree-selection ensemble on the 707-image refit models (public **0.38**), is the single Kaggle final selection. It corresponds to notebook `notebook556361ae1c`, version 3, script version `359548383`. The exact accepted CSV is `results/submission_final.csv`, SHA-256 `2a01f6e07ab24a52571e7fa0770cabe8ca1d95d5c191737acbb12f54564e3405`, containing 1,155 instances. V4 (public 0.37) remains a comparison. Validation PQ 0.4404 belongs to the 457-image tree-selection pipeline; the 707-image refit has no held-out validation score. The report is `report/main_gpu.pdf` (4 pages). Records: `docs/submission-status.json`. AI assistance was used for implementation and documentation; the participant remains responsible for understanding and defending the method.
 
 Earlier entries: the classical baseline (`results/submission.csv`) was accepted on September 23, 2026 (public 0.15) and is no longer selected; the later versions are listed in the table above.
 
-Public source: https://github.com/regmi-sijan/solar-filament-segmentation-2026 (final code on branch `gpu-unet-extension`).
+Public source: https://github.com/regmi-sijan/solar-filament-segmentation-2026. See `docs/final-reproduction.md` for the ordered Kaggle workflow that produces the final entry.
 
 Public Kaggle notebook (classical baseline): https://www.kaggle.com/code/sijanregmi/solar-filament-cpu-baseline-reproducible. Version 1 ran successfully on free CPU and reproduced the accepted CSV byte-for-byte (SHA-256 `65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab`). The GPU notebooks (`notebooks/gpu-*.ipynb`) are run privately on Kaggle; their code is in this repository. Trained weights are not stored in git; the notebooks recreate them.
 

@@ -81,7 +81,7 @@ Classical baseline & 0.15\\
 v1 U-Net & 0.33\\
 Ensemble trained on 457 images, fixed rule & 0.35\\
 Ensemble refit on 707 images, fixed rule & 0.36\\
-\textbf{457-image ensemble, tree selection (final)} & \textbf{0.37}\\
+457-image ensemble, tree selection & 0.37\\
 \textbf{707-image refit, tree selection (final)} & \textbf{0.38}\\\bottomrule
 \end{tabular}
 \end{table}
@@ -92,7 +92,7 @@ Annotators disagree strongly under this metric: scoring one annotator's filament
 
 \subsection{Reproduction}
 \sloppy
-Code is in the public repository; \path{notebooks/gpu-experiments-v2.ipynb} reproduces the candidate comparison and \path{notebooks/gpu-refit-707.ipynb} the 707-image networks on a Kaggle T4$\times$2 (about 2.8~h and 1.4~h); \path{notebooks/gpu-treesel.ipynb} regenerates the probability maps from those saved networks and runs the tree selection (about 23~min). The two files selected on Kaggle are \path{treesel/submission_refit_models.csv} (public 0.38; 1,155 rows, 180 test images, 177 with predictions; SHA-256 prefix \texttt{2a01f6e0}) and \path{treesel/submission_held_out_models.csv} (public 0.37; 1,131 rows, 177 images with predictions; SHA-256 prefix \texttt{8c900861}), both verified for column format, unique identifiers, and canonical RLE; full digests are in the repository. Trained weights are not stored in git; they are recreated by the notebooks, and the tree notebook reads the models and the fixed-rule baseline from the recorded candidate-comparison and refit runs. The classical code is unchanged. AI assistance was used to develop and document the code; the participant must independently understand and defend its operation under the competition rules.
+Code is in the public repository; \path{notebooks/gpu-experiments-v2.ipynb} reproduces the candidate comparison and \path{notebooks/gpu-refit-707.ipynb} the 707-image networks on a Kaggle T4$\times$2 (about 2.8~h and 1.4~h); \path{notebooks/gpu-treesel.ipynb} regenerates the probability maps from those saved networks and runs the tree selection (about 23~min). The single final selection is \path{treesel/submission_refit_models.csv} (public 0.38; 1,155 rows, 180 test images, 177 with predictions). Its exact accepted copy is archived as \path{results/submission_final.csv}, with SHA-256 prefix \texttt{2a01f6e0} and full digest in the repository. The 457-image comparison scored 0.37. The files were verified for column format, unique identifiers, and canonical RLE. Trained weights are recreated by the notebooks; GPU retraining may produce different predictions. The tree notebook reads the models and fixed-rule baseline from the recorded candidate-comparison and refit runs. Ordered instructions are in \path{docs/final-reproduction.md}. AI assistance was used to develop and document the code; the participant must independently understand and defend its operation under the competition rules.
 
 \balance
 \section{Acknowledgment}\label{sec:acknowledgment}

@@ -1,5 +1,13 @@
 # Competition deliverables
 
+## Final verification, November 13, 2026
+
+- Kaggle final selection is one submission, public score 0.38, notebook version 3 (`359548383`). The 0.37 comparison was unselected.
+- The exact accepted CSV is archived at `results/submission_final.csv`; its complete SHA-256 is recorded in `docs/submission-status.json`.
+- Final source and notebooks are available on the repository default branch. Ordered reproduction instructions are in `docs/final-reproduction.md`.
+- `report/main_gpu.pdf` is the updated four-page report matching the single final selection. It distinguishes held-out PQ from the full-data refit's public score.
+- Organizer form attachment replacement is in progress. Earlier dated records below describe historical submissions.
+
 Checked September 23, 2026 against the competition Overview, Rules, official evaluation notebook, report template, and final Google Form.
 
 - Account registered and competition rules accepted: verified in Kaggle UI.

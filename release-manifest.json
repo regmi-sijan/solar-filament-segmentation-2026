@@ -11,8 +11,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 6223,
-    "sha256": "66451048db129ff35bae7cb90abd44764d94f43d3eaae43a14e9f922851c2a14"
+    "bytes": 12048,
+    "sha256": "e991b8eeca77e5286547d8afdfc6b31a8dff42bc0d8e34a63e42edd681f2fd56"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
@@ -51,8 +51,13 @@
   },
   {
     "path": "docs/dl-extension.md",
-    "bytes": 10911,
-    "sha256": "f138ab0883d6aae49b3a5fb0e9ea40d18ca779c66980f3901c7eaecc8285334d"
+    "bytes": 11918,
+    "sha256": "9565167517b547dc52383439d9b1151324a0bcc37456aed86e617cfd9d2389f7"
+  },
+  {
+    "path": "docs/final-reproduction.md",
+    "bytes": 2646,
+    "sha256": "ff9a3cd68328888a1761e927b3644262ca56d92319f9aa725a0cac3825820b9c"
   },
   {
     "path": "docs/method-walkthrough.md",
@@ -60,14 +65,19 @@
     "sha256": "d9a8cccf116c77e47c40f9615ff94e6e3a2ac363bccac306a0e9599d5c02f936"
   },
   {
+    "path": "docs/project-overview.pdf",
+    "bytes": 72016,
+    "sha256": "ebb2d56d1b194f4c0bf1c6f680b48f9742e3626a3e2188dd7131bae052c403f1"
+  },
+  {
     "path": "docs/requirements-checklist.md",
-    "bytes": 3432,
-    "sha256": "f1e3f09b980381e2d8ecb96c48264aaf1a252197b8613b1cc3a6d863f4692ac3"
+    "bytes": 4233,
+    "sha256": "fcf3e4126c17328c82c9cc56a95896fb0e8b936b05df6dab60eebe0b0d615c9f"
   },
   {
     "path": "docs/submission-status.json",
-    "bytes": 1999,
-    "sha256": "492fc27492b6bfc534b5c6050754157b7adf73dcc6633e332403fbe4341309bc"
+    "bytes": 2589,
+    "sha256": "cf341ac2b8db1bb101ad836eb5b6ad23cf3a91b58b51cb82a60c5ac4992f305b"
   },
   {
     "path": "filament/__init__.py",
@@ -105,6 +115,11 @@
     "sha256": "82d9b9e939b74ec619451e6571cb35d02acc87488655237230facd32d5f76928"
   },
   {
+    "path": "filament/treesel.py",
+    "bytes": 26514,
+    "sha256": "d6821a1320383fd6d233774b5d604580268019990175c9a079565d87bb4be939"
+  },
+  {
     "path": "notebooks/competition-pipeline.ipynb",
     "bytes": 498833,
     "sha256": "bf1fa174d2dc770cc2c34c4be701834736260f0df777f5126f65b50afe6acf9d"
@@ -118,6 +133,11 @@
     "path": "notebooks/gpu-refit-707.ipynb",
     "bytes": 101921,
     "sha256": "fd085344153f4bfb978347f207d8540a5b5ebf4a921acf5925f85c6f61b0b84d"
+  },
+  {
+    "path": "notebooks/gpu-treesel.ipynb",
+    "bytes": 135802,
+    "sha256": "bca373142256f2b3c6ae1fec525be8745b8aed95487fa4081778ba0042970056"
   },
   {
     "path": "notebooks/gpu-unet-training.ipynb",
@@ -166,8 +186,8 @@
   },
   {
     "path": "report/gpu.bib",
-    "bytes": 1266,
-    "sha256": "e8ff47e517fdb4afbcef32188d996c74bffa1199d85137ba2b1886645f1b3507"
+    "bytes": 1691,
+    "sha256": "cac134ed1876b58baccc09b08691cc754249f13101d4f0728d405e49394381bf"
   },
   {
     "path": "report/main.bib",
@@ -186,13 +206,13 @@
   },
   {
     "path": "report/main_gpu.pdf",
-    "bytes": 457499,
-    "sha256": "6c4cccfd63819492a070263c9c7684fc4b0be2b7c3012bb1fb3665491d1c1d75"
+    "bytes": 458629,
+    "sha256": "37a4c50986f542c8d67dae434e1e3c6c34d43b6ffd882625cda91b093a5ff5a6"
   },
   {
     "path": "report/main_gpu.tex",
-    "bytes": 12970,
-    "sha256": "b8b51fcacfd48b8addf2379646e5fa3c557f86ccc94a47227e43664d808d1067"
+    "bytes": 16429,
+    "sha256": "07b3792b7b17fff2065448c38acdbe57f585f579d35e285ebf873d80a5f46d56"
   },
   {
     "path": "report/preamble.tex",
@@ -206,8 +226,8 @@
   },
   {
     "path": "requirements.txt",
-    "bytes": 213,
-    "sha256": "356d3768ba09a403ffa2934f82f5790341a4414ba2d6c4da503d0ee46efeb5cf"
+    "bytes": 233,
+    "sha256": "d4c6446a7edfc873f0f596bf6004d769993dcc405162d9606202e778351d34c7"
   },
   {
     "path": "results/calibration-initial.json",
@@ -235,6 +255,11 @@
     "sha256": "65ec7be6fdc2d0a3a47675b897b55fb13506dcc68951de209227065edbba69ab"
   },
   {
+    "path": "results/submission_final.csv",
+    "bytes": 311558,
+    "sha256": "2a01f6e07ab24a52571e7fa0770cabe8ca1d95d5c191737acbb12f54564e3405"
+  },
+  {
     "path": "results/validation.json",
     "bytes": 175731,
     "sha256": "aef2c5402441b2830f52f25ed3a40e784cee3ef577ad0f0c76d2d061daf4aca3"
@@ -253,6 +278,11 @@
     "path": "scripts/create_gpu_notebook_refit.py",
     "bytes": 6808,
     "sha256": "0746c1eb3ebc78fb564f26d05f72594626cb4e6ab359b83fa679d78787f8b127"
+  },
+  {
+    "path": "scripts/create_gpu_notebook_treesel.py",
+    "bytes": 7889,
+    "sha256": "febf03a83ef28578c489c32dc292f33e02fc7bc340cb73fe6661dcc100716b39"
   },
   {
     "path": "scripts/create_gpu_notebook_v2.py",
@@ -286,8 +316,8 @@
   },
   {
     "path": "scripts/package_release.py",
-    "bytes": 2043,
-    "sha256": "24307a1b7e5f463b6eeff03d6176a1367583b545dd4395307f7ad0f3c84cbcaf"
+    "bytes": 2133,
+    "sha256": "5a67e99262b594f82c7c0efa824c2386d573f62c7b33a792f7bbc545f39654d9"
   },
   {
     "path": "tests/test_dl.py",
@@ -303,5 +333,10 @@
     "path": "tests/test_suite.py",
     "bytes": 9551,
     "sha256": "6db50f903a2c04cf59487054987f7dbfe174776ae858b535a08cd9b195097340"
+  },
+  {
+    "path": "tests/test_treesel.py",
+    "bytes": 8382,
+    "sha256": "d847b92fd729b96bf8cfb20f1665e6af36c33ef5bcedad5094b344915b2e2278"
   }
 ]
