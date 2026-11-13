@@ -71,13 +71,13 @@
   },
   {
     "path": "docs/requirements-checklist.md",
-    "bytes": 4363,
-    "sha256": "e76b315c1e74399e9d83a4cca7db27263be4305a61c645876bf9b574d4c9081b"
+    "bytes": 4409,
+    "sha256": "1716aa38b5d4e0f0d81f19e13c56c5fa3f138c8698291fd01bf143be40009864"
   },
   {
     "path": "docs/submission-status.json",
-    "bytes": 2869,
-    "sha256": "dac896f9f3fd9a0bd3771605a1903799dee2ff6cdf2f359bae28b17ea3071b60"
+    "bytes": 2906,
+    "sha256": "a43f8cdf947bb857e1263892be533614571c8ee4dfd7a134eb9d4bc33959f313"
   },
   {
     "path": "filament/__init__.py",
