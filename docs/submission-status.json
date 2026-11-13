@@ -11,7 +11,9 @@
     "sha256": "2a01f6e07ab24a52571e7fa0770cabe8ca1d95d5c191737acbb12f54564e3405",
     "report": "report/main_gpu.pdf",
     "report_sha256": "37a4c50986f542c8d67dae434e1e3c6c34d43b6ffd882625cda91b093a5ff5a6",
-    "organizers_form_status": "attachment update in progress"
+    "organizers_form_status": "final CSV and PDF attached; Submit reached CAPTCHA; confirmation pending",
+    "organizers_form_attachments": ["submission_final.csv", "FINAL_038_technical_report.pdf"],
+    "organizers_form_note": "Previously submitted attachments are retained by Google Forms. The new files identify the current final entry."
   },
   "repository": "https://github.com/regmi-sijan/solar-filament-segmentation-2026",
   "kaggle_submission": {
